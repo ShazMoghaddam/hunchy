@@ -1,4 +1,4 @@
 # The game itself needs nothing installed. These are only for checking the questions.
 pytest>=8.0
 # Only needed to rebuild the dataset snapshots with questions/datasets/snapshot.py
-periodictable>=2.0
+periodictable>=2.1.0
