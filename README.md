@@ -40,31 +40,34 @@ the dark or light look.
 Every result can be shared in one tap. On a phone that opens the share sheet, so it goes straight to WhatsApp,
 Messages or anywhere else; on a computer it's copied, ready to paste. Shared scores never give away an answer.
 
-## 100 jokes
+## 200 jokes
 
 Every game ends with a joke, and Hunch-off has a joke break between rounds. You see the setup first, then tap for
 the punchline, and any joke can be shared. They come out at random and don't repeat until you've seen them all.
 
 Most of them are for everyone: puns, groan-worthy wordplay and gentle digs. Switch on **Grown-up jokes** in
-Settings to add 25 cheekier ones, a little flirty or a little dark. They're off unless someone turns them on.
+Settings to add 125 cheekier ones: teasing, a little flirty or a little dark, but never crude. They're off unless someone turns them on.
 
-## 1,200+ questions in 18 subjects
+## 1,600+ questions in 18 subjects
 
 | Subject | Questions | | Subject | Questions |
 |---|---:|---|---|---:|
-| Sport | 148 | | Science | 60 |
-| Geography | 115 | | Nature & Animals | 60 |
-| Cities & Landmarks | 92 | | Maths | 60 |
-| Inventions & Brands | 82 | | Food & Drink | 60 |
-| Art & Culture | 79 | | Words & Language | 60 |
-| History | 74 | | Space | 52 |
-| Film & TV | 65 | | Cartoons & Animation | 47 |
-| Music | 65 | | Cars & Motorbikes | 45 |
-| Leaders & Famous People | 64 | | Fashion | 32 |
+| Sport | 220 | | Maths | 75 |
+| Geography | 162 | | Nature & Animals | 72 |
+| Cities & Landmarks | 131 | | Film & TV | 65 |
+| Music | 125 | | Space | 63 |
+| Science | 111 | | Food & Drink | 60 |
+| Leaders & Famous People | 108 | | Words & Language | 60 |
+| History | 93 | | Cartoons & Animation | 47 |
+| Inventions & Brands | 82 | | Cars & Motorbikes | 45 |
+| Art & Culture | 79 | | Fashion | 32 |
 
-Sport covers football, the World Cup and the Champions League, tennis, the Olympics, the Tour de France and Formula
-One. Geography asks capitals both ways round ("Canberra is the capital of which country?"), and Cities & Landmarks
-takes in mountains, rivers and wonders from Everest and Damavand to the Grand Canyon. Leaders appear as history, never
+Sport covers football, the World Cup, the Euros and the Champions League, tennis, the Olympics, the Tour de France,
+Formula One and the big events from the Masters to the Boat Race. Music runs from Mozart and Motown to Queen, ABBA,
+Oasis and Bad Bunny. Geography asks capitals both ways round ("Canberra is the capital of which country?") and
+follows the Nile, the Amazon, the Equator and both poles, and Cities & Landmarks takes in mountains, rivers and
+wonders from Everest and Damavand to the Great Wall, Niagara Falls and the Golden Gate Bridge. Science now includes
+chemistry and how the body works, with health facts checked against the NHS. Leaders appear as history, never
 as party politics, and there are no questions about religion. Words & Language covers where words come from,
 languages of the world, alphabets and wordplay.
 
@@ -136,7 +139,7 @@ assets/styles.css        the design
 sw.js                    keeps a copy of the game for offline play
 manifest.webmanifest     lets phones add Hunchy to the home screen
 data/questions.json      every question, built by questions/build.py
-data/jokes.json          100 jokes, built by jokes/build_jokes.py
+data/jokes.json          200 jokes, built by jokes/build_jokes.py
 questions/curated/       hand-written questions, one file per subject
 questions/generated.py   questions worked out from data: maths, countries, elements, planets
 questions/datasets/      snapshots of the open datasets those come from

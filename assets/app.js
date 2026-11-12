@@ -53,7 +53,7 @@
   const pickOne = (list, rnd = Math.random) => list[Math.floor(rnd() * list.length)];
 
   const allowed = (q, who) => who === "everyone" || q.difficulty <= 2;
-  // "1,200+" rather than "1,260": rounds down to the hundred, so the wording stays true as questions are added.
+  // "1,600+" rather than "1,630": rounds down to the hundred, so the wording stays true as questions are added.
   const roundedCount = () => `${(Math.floor(bank.questions.length / 100) * 100).toLocaleString("en-GB")}+`;
   const plural = (n, word) => `${n} ${word}${n === 1 ? "" : "s"}`;
 
