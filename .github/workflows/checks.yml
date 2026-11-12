@@ -1,0 +1,36 @@
+name: Checks
+
+# Rebuilds the question bank and the jokes, and tests every question on each pull request, so a wrong answer, a missing
+# source or a broken page can't be merged.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  questions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - run: pip install -r requirements-dev.txt
+      - name: Rebuild the question bank
+        run: python questions/build.py
+      - name: The committed questions match the source files
+        run: git diff --exit-code -- data/questions.json || (echo "Run python questions/build.py and commit data/questions.json" && exit 1)
+      - name: Rebuild the jokes
+        run: python jokes/build_jokes.py
+      - name: The committed jokes match the source file
+        run: git diff --exit-code -- data/jokes.json || (echo "Run python jokes/build_jokes.py and commit data/jokes.json" && exit 1)
+      - name: Check every question
+        run: pytest -q
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+      - name: The game's JavaScript has no syntax errors
+        run: node --check assets/app.js

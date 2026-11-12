@@ -1,0 +1,604 @@
+{
+ "jokes": [
+  {
+   "id": "joke-001",
+   "setup": "Why did the higher-or-lower player bring a ladder?",
+   "punchline": "They had a feeling the answer was higher.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-002",
+   "setup": "Why does the Eiffel Tower grow in summer?",
+   "punchline": "Too many croissants on holiday.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-003",
+   "setup": "Why did the polar bear fail the penguin-spotting test?",
+   "punchline": "Wrong pole.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-004",
+   "setup": "Why do octopuses make great quiz partners?",
+   "punchline": "They put three hearts into every answer.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-005",
+   "setup": "Why is a snail's dentist always busy?",
+   "punchline": "Every snail has thousands of teeth to check.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-006",
+   "setup": "What does a goldfish say about its three-second memory?",
+   "punchline": "It's a myth. And it'll remember you said that for months.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-007",
+   "setup": "Why did the detectives question the koala?",
+   "punchline": "Its fingerprints were all over the case.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-008",
+   "setup": "Why do giraffes make terrible secret agents?",
+   "punchline": "They can't stop sticking their necks out.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-009",
+   "setup": "What's a crab's favourite subject?",
+   "punchline": "Maths. It's got ten legs to count on.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-010",
+   "setup": "Why did the bat get top marks in biology?",
+   "punchline": "It was the only mammal that could fly through the test.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-011",
+   "setup": "Why was the strawberry crying?",
+   "punchline": "It found out it isn't a berry. The banana is.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-012",
+   "setup": "Why does Jupiter always rush its homework?",
+   "punchline": "Its days are only ten hours long.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-013",
+   "setup": "Why did Pluto stop going to planet parties after 2006?",
+   "punchline": "It wasn't on the list any more.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-014",
+   "setup": "Why is Saturn so popular?",
+   "punchline": "It has over 200 moons following it around.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-015",
+   "setup": "Why won't zero let anyone call it odd?",
+   "punchline": "It's even, and it's got the maths to prove it.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-016",
+   "setup": "Why is a leap year always so cheerful?",
+   "punchline": "It gets an extra day off.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-017",
+   "setup": "Why did the Romans find algebra so easy?",
+   "punchline": "X was always 10.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-018",
+   "setup": "Why didn't the Vikings really wear horned helmets?",
+   "punchline": "They kept getting stuck in the longhouse door.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-019",
+   "setup": "What did Napoleon say when someone called him short?",
+   "punchline": "I'm average for my time. Check the sources.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-020",
+   "setup": "What's the Leaning Tower of Pisa's favourite exercise?",
+   "punchline": "Side bends.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-021",
+   "setup": "Why is Big Ben always a bit confused?",
+   "punchline": "Everyone calls the whole tower by his name, and he's only the bell.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-022",
+   "setup": "Why did the Matterhorn feel left out?",
+   "punchline": "Everyone kept mistaking it for a chocolate bar.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-023",
+   "setup": "Why are Dead Sea swimming lessons so short?",
+   "punchline": "Everyone passes the floating test straight away.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-024",
+   "setup": "Why does the Danube get so many postcards?",
+   "punchline": "It has friends in ten countries.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-025",
+   "setup": "Why does Canberra feel so left out?",
+   "punchline": "Everyone keeps guessing Sydney.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-026",
+   "setup": "Why did the geyser get a job at the café?",
+   "punchline": "It's brilliant at letting off steam.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-027",
+   "setup": "Why do fjords make tricky friends?",
+   "punchline": "They're very deep, but a bit narrow-minded.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-028",
+   "setup": "Why did the footballer bring string to the match?",
+   "punchline": "To tie the game.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-029",
+   "setup": "Why did the sprinter get disqualified from quiz night?",
+   "punchline": "She kept answering before the gun.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-030",
+   "setup": "Why are Le Mans drivers so tired?",
+   "punchline": "Twenty-four hours is a long time to go round in circles.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-031",
+   "setup": "Why did the Lamborghini stop at the farm?",
+   "punchline": "It wanted to visit the tractors and the bulls. Family is family.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-032",
+   "setup": "What do Mary Quant's miniskirt and the Mini car have in common?",
+   "punchline": "Not much leg room.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-033",
+   "setup": "Why did the jeans go on holiday to Nîmes?",
+   "punchline": "To get back to their roots.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-034",
+   "setup": "What did the wellington boot say to the puddle?",
+   "punchline": "You're no Waterloo.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-035",
+   "setup": "Why did the Jaffa Cake go to court?",
+   "punchline": "To prove it wasn't a biscuit. It won.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-036",
+   "setup": "Why is Marmite so good at arguments?",
+   "punchline": "Half the room is always on its side.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-037",
+   "setup": "Why won't tea boil properly on Everest?",
+   "punchline": "It only gets to 70 degrees and comes out feeling weak.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-038",
+   "setup": "Why was Mickey Mouse upset in 2006?",
+   "punchline": "Someone said Pluto wasn't a planet any more.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-039",
+   "setup": "Why is Pluto jealous of Goofy?",
+   "punchline": "They're both dogs, but only one of them got trousers.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-040",
+   "setup": "Why is Disney's Robin Hood so good at quizzes?",
+   "punchline": "He's a sly fox who never misses.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-041",
+   "setup": "What's Olaf's favourite thing about a warm hug?",
+   "punchline": "Everything. Which is exactly the problem.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-042",
+   "setup": "Why did Pinocchio lose the quiz?",
+   "punchline": "Every time he bluffed, his nose gave it away.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-043",
+   "setup": "Why does Gromit never say the answer out loud?",
+   "punchline": "He just raises an eyebrow and waits for you to catch up.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-044",
+   "setup": "Why did King Harald have a blue tooth?",
+   "punchline": "Nobody knows, but his phone pairs beautifully.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-045",
+   "setup": "Why did the higher-or-lower question go to therapy?",
+   "punchline": "Too many ups and downs.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-046",
+   "setup": "What did the yes-or-no question say on its first date?",
+   "punchline": "Let's keep this simple.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-047",
+   "setup": "What did the drone bee put on its CV?",
+   "punchline": "Doesn't sting, doesn't work, great company.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-048",
+   "setup": "Why does a parliament of owls never get anything done?",
+   "punchline": "Every time someone speaks, the rest just say 'Who?'",
+   "grownUp": false
+  },
+  {
+   "id": "joke-049",
+   "setup": "What do you call a group of crows planning a quiz night?",
+   "punchline": "A murder mystery.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-050",
+   "setup": "Why does the Sphinx always win at riddles?",
+   "punchline": "It wrote half of them.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-051",
+   "setup": "Why did the pyramid builders never get lost?",
+   "punchline": "They always followed the point.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-052",
+   "setup": "Why did Stonehenge go to the doctor?",
+   "punchline": "Its back had been stiff for 5,000 years.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-053",
+   "setup": "Why did Everest and K2 stop talking?",
+   "punchline": "K2 got tired of being looked down on.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-054",
+   "setup": "Why hasn't Mount Fuji erupted since 1707?",
+   "punchline": "It decided to be the calm one in all the photos.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-055",
+   "setup": "What did the Colorado River say to the Grand Canyon?",
+   "punchline": "Sorry, I know I've been going on about this for millions of years.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-056",
+   "setup": "Why has nobody ever found the Loch Ness Monster?",
+   "punchline": "It's hiding in more water than all of England and Wales put together.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-057",
+   "setup": "Why does the Spirit of Ecstasy never get carsick?",
+   "punchline": "She always sits at the very front.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-058",
+   "setup": "Why don't Formula One cars stop to refuel any more?",
+   "punchline": "They start the race full of themselves.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-059",
+   "setup": "Why was every Model T painted black?",
+   "punchline": "Every other colour was still drying.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-060",
+   "setup": "Why does a Vespa always buzz off so quickly?",
+   "punchline": "It's Italian for wasp.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-061",
+   "setup": "Why does Tom never catch Jerry?",
+   "punchline": "Seven Oscars say he shouldn't.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-062",
+   "setup": "How does Scooby-Doo solve every mystery?",
+   "punchline": "He follows the snacks, and the snacks always lead to the culprit.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-063",
+   "setup": "Why did the Minion fail its French test?",
+   "punchline": "It answered every question in six languages at once.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-064",
+   "setup": "Why doesn't the Gruffalo ever enter quizzes?",
+   "punchline": "Everyone knows there's no such thing.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-065",
+   "setup": "Why was the penguin wandering around the Sahara?",
+   "punchline": "It took a wrong turn at the equator.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-066",
+   "setup": "Why did the cheetah challenge the greyhound to a race?",
+   "punchline": "It fancied a guaranteed win.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-067",
+   "setup": "Why don't flamingos play football?",
+   "punchline": "They'd only ever use one leg.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-068",
+   "setup": "Why do pandas do so well in quizzes about bamboo?",
+   "punchline": "They've never studied anything else.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-069",
+   "setup": "Why did the blue whale join the quiz team?",
+   "punchline": "It wanted to be part of something big.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-070",
+   "setup": "What did the light year say when someone called it a unit of time?",
+   "punchline": "Distance yourself from that answer.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-071",
+   "setup": "Why was the barometer so moody?",
+   "punchline": "It was under a lot of pressure.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-072",
+   "setup": "Why did the periodic table get a gold star?",
+   "punchline": "It had Au the right elements.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-073",
+   "setup": "What do you get if you cross a snowman with a quiz?",
+   "punchline": "Brain freeze.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-074",
+   "setup": "Why is the Christmas tree so good at quizzes?",
+   "punchline": "It knows all the branches of knowledge.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-075",
+   "setup": "Why did the magnet's friends worry about it?",
+   "punchline": "It kept pulling in the wrong ones and pushing the right ones away.",
+   "grownUp": false
+  },
+  {
+   "id": "joke-076",
+   "setup": "What was Henry VIII's best dating advice?",
+   "punchline": "Keep your head. Not everyone did.",
+   "grownUp": true
+  },
+  {
+   "id": "joke-077",
+   "setup": "My doctor told me to do more cardio.",
+   "punchline": "So I've started arguing at quiz night.",
+   "grownUp": true
+  },
+  {
+   "id": "joke-078",
+   "setup": "I told my partner they're the answer to all my questions.",
+   "punchline": "They said, 'Then why do you keep getting them wrong?'",
+   "grownUp": true
+  },
+  {
+   "id": "joke-079",
+   "setup": "Are you a higher-or-lower question?",
+   "punchline": "Because my heart rate's definitely going higher.",
+   "grownUp": true
+  },
+  {
+   "id": "joke-080",
+   "setup": "Are you today's ten?",
+   "punchline": "Because I'd come back every single day just to keep the streak going.",
+   "grownUp": true
+  },
+  {
+   "id": "joke-081",
+   "setup": "People say I've got the memory of a goldfish.",
+   "punchline": "Joke's on them. Goldfish remember things for months. I can't find my keys.",
+   "grownUp": true
+  },
+  {
+   "id": "joke-082",
+   "setup": "Why did the snowman's wife leave him?",
+   "punchline": "He was a total flake.",
+   "grownUp": true
+  },
+  {
+   "id": "joke-083",
+   "setup": "Why does Dracula always win the pub quiz?",
+   "punchline": "He was there for most of the answers.",
+   "grownUp": true
+  },
+  {
+   "id": "joke-084",
+   "setup": "I'd tell you a joke about the Mariana Trench.",
+   "punchline": "But it's far too deep for this time of night.",
+   "grownUp": true
+  },
+  {
+   "id": "joke-085",
+   "setup": "Why is a Hunch-off like a family Christmas?",
+   "punchline": "Somebody always storms off before the scores are in.",
+   "grownUp": true
+  },
+  {
+   "id": "joke-086",
+   "setup": "I tried speed dating at the Tour de France.",
+   "punchline": "Everyone just rode straight past.",
+   "grownUp": true
+  },
+  {
+   "id": "joke-087",
+   "setup": "Are you The Kiss by Klimt?",
+   "punchline": "Because I could stare at you for hours and still not understand what's going on.",
+   "grownUp": true
+  },
+  {
+   "id": "joke-088",
+   "setup": "Are you Mount Damavand?",
+   "punchline": "Because you're hot, and I'm not convinced you're as dormant as you look.",
+   "grownUp": true
+  },
+  {
+   "id": "joke-089",
+   "setup": "My love life is a lot like Pluto.",
+   "punchline": "Officially downgraded, and still going round in circles.",
+   "grownUp": true
+  },
+  {
+   "id": "joke-090",
+   "setup": "Why did the Viking's wife take him to couples therapy?",
+   "punchline": "She said he was far too horny. Historians say that's a myth.",
+   "grownUp": true
+  },
+  {
+   "id": "joke-091",
+   "setup": "My other half asked if I'm a good loser.",
+   "punchline": "I said, 'Have you seen my Hunchy scores? I'm a professional.'",
+   "grownUp": true
+  },
+  {
+   "id": "joke-092",
+   "setup": "Why did the Grim Reaper win the pub quiz?",
+   "punchline": "He already knew everyone's final answer.",
+   "grownUp": true
+  },
+  {
+   "id": "joke-093",
+   "setup": "Why did the bottle of wine join the quiz team?",
+   "punchline": "It said it gets better with age. Three glasses in, nobody was getting better.",
+   "grownUp": true
+  },
+  {
+   "id": "joke-094",
+   "setup": "Why is marriage like a yes-or-no question?",
+   "punchline": "There's always a right answer. You just find out later which one it was.",
+   "grownUp": true
+  },
+  {
+   "id": "joke-095",
+   "setup": "Are you a yes-or-no question?",
+   "punchline": "Because I already know my answer.",
+   "grownUp": true
+  },
+  {
+   "id": "joke-096",
+   "setup": "Are you the speed of light?",
+   "punchline": "Because you've just gone round my head seven times in one second.",
+   "grownUp": true
+  },
+  {
+   "id": "joke-097",
+   "setup": "My diet's going really well.",
+   "punchline": "I only eat things that are scientifically fruit. Tomatoes, cucumbers, and the peppers on my pizza.",
+   "grownUp": true
+  },
+  {
+   "id": "joke-098",
+   "setup": "My bank balance is like the Dead Sea.",
+   "punchline": "Well below sea level, and somehow it keeps getting lower.",
+   "grownUp": true
+  },
+  {
+   "id": "joke-099",
+   "setup": "My partner and I settle our arguments with a Hunch-off.",
+   "punchline": "It's like a divorce, but with sources.",
+   "grownUp": true
+  },
+  {
+   "id": "joke-100",
+   "setup": "Why are cats like bad losers at Hunchy?",
+   "punchline": "They never admit a wrong answer. They just knock the phone off the table.",
+   "grownUp": true
+  }
+ ]
+}

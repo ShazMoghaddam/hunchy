@@ -1,0 +1,136 @@
+country,code,capital_a,capital_b,area_a,area_b,region_a,subregion_a,continent_b,landlocked,population_wb,population_year,population_b
+Argentina,ARG,Buenos Aires,Buenos Aires,2780400,2780400.0,Americas,South America,South America,False,45851378,2025,44494502
+Australia,AUS,Canberra,Canberra,7692024,7741220.0,Oceania,Australia and New Zealand,Oceania,False,27614411,2025,24982688
+Austria,AUT,Vienna,Wien,83871,83859.0,Europe,Central Europe,Europe,True,9208163,2025,8840521
+Belgium,BEL,Brussels,Bruxelles [Brussel],30528,30518.0,Europe,Western Europe,Europe,False,11941781,2025,11433256
+Brazil,BRA,Brasília,Brasília,8515767,8547403.0,Americas,South America,South America,False,212812405,2025,209469333
+Canada,CAN,Ottawa,Ottawa,9984670,9970610.0,Americas,North America,North America,False,41651653,2025,37057765
+Chile,CHL,Santiago,Santiago de Chile,756102,756626.0,Americas,South America,South America,False,19859921,2025,18729160
+China,CHN,Beijing,Peking,9706961,9572900.0,Asia,Eastern Asia,Asia,False,1406585000,2025,1392730000
+Colombia,COL,Bogotá,Bogota,1141748,1138914.0,Americas,South America,South America,False,53425635,2025,49648685
+Croatia,HRV,Zagreb,Zagreb,56594,56538.0,Europe,Southeast Europe,Europe,False,3876200,2025,4087843
+Cuba,CUB,Havana,La Habana,109884,110861.0,Americas,Caribbean,North America,False,10937203,2025,11338138
+Denmark,DNK,Copenhagen,Copenhagen,43094,43094.0,Europe,Northern Europe,Europe,False,6009169,2025,5793636
+Egypt,EGY,Cairo,Cairo,1002450,1001449.0,Africa,Northern Africa,Africa,False,118365995,2025,98423595
+Ethiopia,ETH,Addis Ababa,Addis Abeba,1104300,1104300.0,Africa,Eastern Africa,Africa,True,135472051,2025,109224559
+Finland,FIN,Helsinki,Helsinki [Helsingfors],338424,338145.0,Europe,Northern Europe,Europe,False,5646436,2025,5515525
+France,FRA,Paris,Paris,551695,551500.0,Europe,Western Europe,Europe,False,68720337,2025,66977107
+Germany,DEU,Berlin,Berlin,357114,357022.0,Europe,Western Europe,Europe,False,83491249,2025,82905782
+Ghana,GHA,Accra,Accra,238533,238533.0,Africa,Western Africa,Africa,False,35064272,2025,29767108
+Greece,GRC,Athens,Athenai,131990,131626.0,Europe,Southern Europe,Europe,False,10413962,2025,10731726
+Iceland,ISL,Reykjavik,Reykjavík,103000,103000.0,Europe,Northern Europe,Europe,False,392404,2025,352721
+India,IND,New Delhi,New Delhi,3287590,3287263.0,Asia,Southern Asia,Asia,False,1463865525,2025,1352617328
+Indonesia,IDN,Jakarta,Jakarta,1904569,1904569.0,Asia,South-Eastern Asia,Asia,False,285721236,2025,267663435
+Ireland,IRL,Dublin,Dublin,70273,70273.0,Europe,Northern Europe,Europe,False,5484367,2025,4867309
+Italy,ITA,Rome,Roma,301336,301316.0,Europe,Southern Europe,Europe,False,58915656,2025,60421760
+Jamaica,JAM,Kingston,Kingston,10991,10990.0,Americas,Caribbean,North America,False,2837077,2025,2934855
+Japan,JPN,Tokyo,Tokyo,377930,377829.0,Asia,Eastern Asia,Asia,False,123366734,2025,126529100
+Kenya,KEN,Nairobi,Nairobi,580367,580367.0,Africa,Eastern Africa,Africa,False,57532493,2025,51393010
+Mexico,MEX,Mexico City,Ciudad de M,1964375,1958201.0,Americas,North America,North America,False,131946900,2025,126190788
+Morocco,MAR,Rabat,Rabat,446550,446550.0,Africa,Northern Africa,Africa,False,38430770,2025,36029138
+Nepal,NPL,Kathmandu,Kathmandu,147181,147181.0,Asia,Southern Asia,Asia,True,29618118,2025,28087871
+Netherlands,NLD,Amsterdam,Amsterdam,41850,41526.0,Europe,Western Europe,Europe,False,18087633,2025,17231624
+New Zealand,NZL,Wellington,Wellington,270467,270534.0,Oceania,Australia and New Zealand,Oceania,False,5324700,2025,4841000
+Nigeria,NGA,Abuja,Abuja,923768,923768.0,Africa,Western Africa,Africa,False,237527782,2025,195874740
+Norway,NOR,Oslo,Oslo,323802,323877.0,Europe,Northern Europe,Europe,False,5610870,2025,5311916
+Pakistan,PAK,Islamabad,Islamabad,881912,796095.0,Asia,Southern Asia,Asia,False,255219554,2025,212215030
+Peru,PER,Lima,Lima,1285216,1285216.0,Americas,South America,South America,False,34576665,2025,31989256
+Philippines,PHL,Manila,Manila,342353,300000.0,Asia,South-Eastern Asia,Asia,False,116786962,2025,106651922
+Poland,POL,Warsaw,Warszawa,312679,323250.0,Europe,Central Europe,Europe,False,36435861,2025,37974750
+Portugal,PRT,Lisbon,Lisboa,92090,91982.0,Europe,Southern Europe,Europe,False,10804871,2025,10283822
+Saudi Arabia,SAU,Riyadh,Riyadh,2149690,2149690.0,Asia,Western Asia,Asia,False,36973555,2025,33699947
+South Africa,ZAF,Pretoria,Pretoria,1221037,1221037.0,Africa,Southern Africa,Africa,False,64747319,2025,57779622
+South Korea,KOR,Seoul,Seoul,100210,99434.0,Asia,Eastern Asia,Asia,False,51684564,2025,51606633
+Spain,ESP,Madrid,Madrid,505992,505992.0,Europe,Southern Europe,Europe,False,49355143,2025,46796540
+Sweden,SWE,Stockholm,Stockholm,450295,449964.0,Europe,Northern Europe,Europe,False,10596620,2025,10175214
+Switzerland,CHE,Bern,Bern,41284,41284.0,Europe,Western Europe,Europe,True,9092436,2025,8513227
+Thailand,THA,Bangkok,Bangkok,513120,513115.0,Asia,South-Eastern Asia,Asia,False,71619863,2025,69428524
+Turkey,TUR,Ankara,Ankara,783562,774815.0,Asia,Western Asia,Asia,False,85878556,2025,82319724
+Ukraine,UKR,Kyiv,Kyiv,603500,603700.0,Europe,Eastern Europe,Europe,False,38980376,2025,44622516
+United Kingdom,GBR,London,London,242900,242900.0,Europe,Northern Europe,Europe,False,69487000,2025,66460344
+United States,USA,Washington D.C.,Washington,9372610,9363520.0,Americas,North America,North America,False,341784857,2025,326687501
+Vietnam,VNM,Hanoi,Hanoi,331212,331689.0,Asia,South-Eastern Asia,Asia,False,101598527,2025,95540395
+Russia,RUS,Moscow,,17098242,,Europe,Eastern Europe,,False,143513328,2025,
+Mongolia,MNG,Ulan Bator,Ulan Bator,1564110,1566500.0,Asia,Eastern Asia,Asia,True,3568978,2025,3170208
+Bolivia,BOL,Sucre,La Paz,1098581,1098581.0,Americas,South America,South America,True,12581843,2025,11353142
+Paraguay,PRY,Asunción,Asunción,406752,406752.0,Americas,South America,South America,True,7013078,2025,6956071
+Hungary,HUN,Budapest,Budapest,93028,93030.0,Europe,Central Europe,Europe,True,9514251,2025,9775564
+Czechia,CZE,Prague,Praha,78865,78866.0,Europe,Central Europe,Europe,True,10886878,2025,10629928
+Uganda,UGA,Kampala,Kampala,241550,241038.0,Africa,Eastern Africa,Africa,True,51384894,2025,42723139
+Zambia,ZMB,Lusaka,Lusaka,752612,752618.0,Africa,Eastern Africa,Africa,True,21913874,2025,17351822
+Kazakhstan,KAZ,Astana,Astana,2724900,2724900.0,Asia,Central Asia,Asia,True,20843754,2025,18272430
+Algeria,DZA,Algiers,Alger,2381741,2381741.0,Africa,Northern Africa,Africa,False,47435312,2025,42228429
+Angola,AGO,Luanda,Luanda,1246700,1246700.0,Africa,Middle Africa,Africa,False,39040039,2025,30809762
+Armenia,ARM,Yerevan,Yerevan,29743,29800.0,Asia,Western Asia,Asia,True,3086700,2025,2951776
+Azerbaijan,AZE,Baku,Baku,86600,86600.0,Asia,Western Asia,Asia,True,10246996,2025,9939800
+Bangladesh,BGD,Dhaka,Dhaka,147570,143998.0,Asia,Southern Asia,Asia,False,175686899,2025,161356039
+Bulgaria,BGR,Sofia,Sofia,110879,110994.0,Europe,Southeast Europe,Europe,False,6433302,2025,7025037
+Cambodia,KHM,Phnom Penh,Phnom Penh,181035,181035.0,Asia,South-Eastern Asia,Asia,False,17847982,2025,16249798
+Cameroon,CMR,Yaoundé,Yaounde,475442,475442.0,Africa,Middle Africa,Africa,False,29879337,2025,25216237
+Costa Rica,CRI,San José,San José,51100,51100.0,Americas,Central America,North America,False,5152950,2025,4999441
+Cyprus,CYP,Nicosia,Nicosia,9251,9251.0,Europe,Southern Europe,Asia,False,1370754,2025,1189265
+Ecuador,ECU,Quito,Quito,276841,283561.0,Americas,South America,South America,False,18289896,2025,17084357
+Estonia,EST,Tallinn,Tallinn,45227,45227.0,Europe,Northern Europe,Europe,False,1366475,2025,1321977
+Fiji,FJI,Suva,,18272,,Oceania,Melanesia,,False,933154,2025,
+Georgia,GEO,Tbilisi,Tbilisi,69700,69700.0,Asia,Western Asia,Asia,False,3935766,2025,3726549
+Guatemala,GTM,Guatemala City,Ciudad de Guatemala,108889,108889.0,Americas,Central America,North America,False,18687881,2025,17247807
+Iran,IRN,Tehran,Tehran,1648195,1648195.0,Asia,Southern Asia,Asia,False,92417681,2025,81800269
+Iraq,IRQ,Baghdad,Baghdad,438317,438317.0,Asia,Western Asia,Asia,False,47020774,2025,38433600
+Jordan,JOR,Amman,Amman,89342,88946.0,Asia,Western Asia,Asia,False,11520684,2025,9956011
+Kuwait,KWT,Kuwait City,Kuwait,17818,17818.0,Asia,Western Asia,Asia,False,4865298,2025,4137309
+Laos,LAO,Vientiane,Vientiane,236800,236800.0,Asia,South-Eastern Asia,Asia,True,7873046,2025,7061507
+Latvia,LVA,Riga,Riga,64559,64589.0,Europe,Northern Europe,Europe,False,1847785,2025,1927174
+Lebanon,LBN,Beirut,Beirut,10452,10400.0,Asia,Western Asia,Asia,False,5849421,2025,6848925
+Lithuania,LTU,Vilnius,Vilnius,65300,65301.0,Europe,Northern Europe,Europe,False,2888774,2025,2801543
+Luxembourg,LUX,Luxembourg,Luxembourg [Luxemburg/L,2586,2586.0,Europe,Western Europe,Europe,True,686970,2025,607950
+Madagascar,MDG,Antananarivo,Antananarivo,587041,587041.0,Africa,Eastern Africa,Africa,False,32740678,2025,26262368
+Malaysia,MYS,Kuala Lumpur,Kuala Lumpur,330803,329758.0,Asia,South-Eastern Asia,Asia,False,35977838,2025,31528585
+Mali,MLI,Bamako,Bamako,1240192,1240192.0,Africa,Western Africa,Africa,True,25198821,2025,19077690
+Malta,MLT,Valletta,Valletta,316,316.0,Europe,Southern Europe,Europe,False,579704,2025,484630
+Mozambique,MOZ,Maputo,Maputo,801590,801590.0,Africa,Eastern Africa,Africa,False,35631653,2025,29495962
+Namibia,NAM,Windhoek,Windhoek,825615,824292.0,Africa,Southern Africa,Africa,False,3092816,2025,2448255
+Oman,OMN,Muscat,Masqat,309500,309500.0,Asia,Western Asia,Asia,False,5494691,2025,4829483
+Panama,PAN,Panama City,Ciudad de Panamá,75417,75517.0,Americas,Central America,North America,False,4571189,2025,4176873
+Qatar,QAT,Doha,Doha,11586,11000.0,Asia,Western Asia,Asia,False,2972215,2025,2781677
+Romania,ROU,Bucharest,Bucuresti,238391,238391.0,Europe,Southeast Europe,Europe,False,19020271,2025,19466145
+Rwanda,RWA,Kigali,Kigali,26338,26338.0,Africa,Eastern Africa,Africa,True,14569341,2025,12301939
+Senegal,SEN,Dakar,Dakar,196722,196722.0,Africa,Western Africa,Africa,False,18931966,2025,15854360
+Serbia,SRB,Belgrade,Belgrade,88361,88361.0,Europe,Southeast Europe,Europe,True,6549143,2025,6963764
+Singapore,SGP,Singapore,Singapore,710,618.0,Asia,South-Eastern Asia,Asia,False,6111175,2025,5638676
+Slovakia,SVK,Bratislava,Bratislava,49037,49012.0,Europe,Central Europe,Europe,True,5413813,2025,5446771
+Slovenia,SVN,Ljubljana,Ljubljana,20273,20256.0,Europe,Central Europe,Europe,False,2130986,2025,2073894
+Tunisia,TUN,Tunis,Tunis,163610,163610.0,Africa,Northern Africa,Africa,False,12348573,2025,11565204
+United Arab Emirates,ARE,Abu Dhabi,Abu Dhabi,83600,83600.0,Asia,Western Asia,Asia,False,11513149,2025,9630959
+Uruguay,URY,Montevideo,Montevideo,181034,175016.0,Americas,South America,South America,False,3384688,2025,3449299
+Uzbekistan,UZB,Tashkent,Toskent,447400,447400.0,Asia,Central Asia,Asia,True,37053428,2025,32955400
+Venezuela,VEN,Caracas,Caracas,916445,912050.0,Americas,South America,South America,False,28516896,2025,28870195
+Zimbabwe,ZWE,Harare,Harare,390757,390757.0,Africa,Eastern Africa,Africa,True,16950795,2025,14439018
+Bhutan,BTN,Thimphu,Thimphu,38394,47000.0,Asia,Southern Asia,Asia,True,796682,2025,754394
+Botswana,BWA,Gaborone,Gaborone,582000,581730.0,Africa,Southern Africa,Africa,True,2562122,2025,2254126
+Malawi,MWI,Lilongwe,Lilongwe,118484,118484.0,Africa,Eastern Africa,Africa,True,22216120,2025,18143315
+Albania,ALB,Tirana,Tirana,28748,28748.0,Europe,Southeast Europe,Europe,False,2349580,2025,2866376
+North Macedonia,MKD,Skopje,Skopje,25713,25713.0,Europe,Southeast Europe,Europe,True,1820909,2025,2084367
+Montenegro,MNE,Podgorica,Podgorica,13812,,Europe,Southeast Europe,Europe,False,623129,2025,631219
+Bosnia and Herzegovina,BIH,Sarajevo,Sarajevo,51209,51197.0,Europe,Southeast Europe,Europe,False,3140095,2025,3323929
+Moldova,MDA,Chișinău,Chisinau,33846,33851.0,Europe,Eastern Europe,Europe,True,2360527,2025,2706049
+Belarus,BLR,Minsk,Minsk,207600,207600.0,Europe,Eastern Europe,Europe,True,9085991,2025,9483499
+Honduras,HND,Tegucigalpa,Tegucigalpa,112492,112088.0,Americas,Central America,North America,False,11005850,2025,9587522
+Sudan,SDN,Khartoum,Khartum,1886068,1886068.0,Africa,Northern Africa,Africa,False,51662147,2025,41801533
+Libya,LBY,Tripoli,Tripoli,1759540,1759540.0,Africa,Northern Africa,Africa,False,7458555,2025,6678567
+Kyrgyzstan,KGZ,Bishkek,Bishkek,199951,199900.0,Asia,Central Asia,Asia,True,7343064,2025,6322800
+Tajikistan,TJK,Dushanbe,Dushanbe,143100,143100.0,Asia,Central Asia,Asia,True,10786734,2025,9100837
+Turkmenistan,TKM,Ashgabat,Ashgabat,488100,488100.0,Asia,Central Asia,Asia,True,7618847,2025,5850908
+Papua New Guinea,PNG,Port Moresby,Port Moresby,462840,462840.0,Oceania,Melanesia,Oceania,False,10762817,2025,8606316
+Samoa,WSM,Apia,Apia,2842,2831.0,Oceania,Polynesia,Oceania,False,219306,2025,196130
+Tonga,TON,Nuku'alofa,Nuku'alofa,747,650.0,Oceania,Polynesia,Oceania,False,103742,2025,103197
+Barbados,BRB,Bridgetown,Bridgetown,430,430.0,Americas,Caribbean,North America,False,282623,2025,286641
+Trinidad and Tobago,TTO,Port of Spain,Port-of-Spain,5130,5130.0,Americas,Caribbean,North America,False,1367764,2025,1389858
+Bahamas,BHS,Nassau,Nassau,13943,13878.0,Americas,Caribbean,North America,False,403033,2025,385640
+Dominican Republic,DOM,Santo Domingo,Santo Domingo de Guzm,48671,48511.0,Americas,Caribbean,North America,False,11520487,2025,10627165
+Haiti,HTI,Port-au-Prince,Port-au-Prince,27750,27750.0,Americas,Caribbean,North America,False,11906095,2025,11123176
+Nicaragua,NIC,Managua,Managua,130373,130000.0,Americas,Central America,North America,False,7007502,2025,6465513
+El Salvador,SLV,San Salvador,San Salvador,21041,21041.0,Americas,Central America,North America,False,6365503,2025,6420744
+Liechtenstein,LIE,Vaduz,Vaduz,160,160.0,Europe,Western Europe,Europe,True,41024,2025,37910
+Andorra,AND,Andorra la Vella,Andorra la Vella,468,468.0,Europe,Southern Europe,Europe,True,82904,2025,77006
+Monaco,MCO,Monaco,Monaco-Ville,2.02,1.5,Europe,Western Europe,Europe,False,38341,2025,38682
+San Marino,SMR,City of San Marino,San Marino,61,61.0,Europe,Southern Europe,Europe,True,34109,2025,33785
