@@ -19,6 +19,8 @@
   let shownJoke = null;     // the joke on screen, for sharing
   let sound = true;         // little sounds and a buzz on phones; one switch turns both off
   let theme = "dark";       // "dark" (the default) or "light"
+  let updateWaiting = false; // a new version is ready but a round is being played
+  let reloading = false;
 
   // Storage. Browsers can refuse it (private windows, blocked cookies), so every call is guarded and the game
   // works without it; it just won't remember streaks.
@@ -201,6 +203,7 @@
 
   function home() {
     game = null;
+    if (updateWaiting && !reloading) { reloading = true; location.reload(); return; } // a new version arrived mid-game
     const key = todayKey();
     const done = store.get("daily", {})[key];
     const counts = {};
@@ -837,7 +840,18 @@
     applyTheme();
     // Offline play: the service worker keeps a copy of the game and its questions. Only on https or localhost.
     if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
-      navigator.serviceWorker.register("sw.js").catch(() => { /* still playable online */ });
+      // When a new version takes over, reload onto it straight away, so nobody plays the old one. On a first visit
+      // there was no old version, so there's nothing to reload. Mid-game, the reload waits until the round is over.
+      const hadOldVersion = !!navigator.serviceWorker.controller;
+      navigator.serviceWorker.addEventListener("controllerchange", () => {
+        if (!hadOldVersion || reloading) return;
+        if (game) { updateWaiting = true; return; }
+        reloading = true; location.reload();
+      });
+      navigator.serviceWorker.register("sw.js").then((reg) => {
+        // Phones often keep Hunchy open in the background for days, so look for a new version whenever it comes back.
+        document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") reg.update().catch(() => {}); });
+      }).catch(() => { /* still playable online */ });
     }
     const loadJokes = fetch("data/jokes.json", { cache: "no-cache" })
       .then((r) => (r.ok ? r.json() : { jokes: [] })).then((d) => { jokes = Array.isArray(d.jokes) ? d.jokes : []; })
