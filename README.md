@@ -31,7 +31,11 @@ After each answer you get a short "did you know" fact and a link to where the an
 | **Three lives** | Keep going until you get three wrong |
 | **Hunch-off** | 2 to 6 players take turns on one phone. Highest score wins, with a joke break after every round of turns |
 
-Choose **Easier questions** on the home screen to leave out the hardest ones.
+**Your stats** shows your best subjects, longest daily streak, best run at three lives and how many perfect tens
+you've scored.
+
+**Settings** on the home screen lets you choose easier questions, switch grown-up jokes and sound on or off, and pick
+the dark or light look.
 
 Every result can be shared in one tap. On a phone that opens the share sheet, so it goes straight to WhatsApp,
 Messages or anywhere else; on a computer it's copied, ready to paste. Shared scores never give away an answer.
@@ -41,10 +45,10 @@ Messages or anywhere else; on a computer it's copied, ready to paste. Shared sco
 Every game ends with a joke, and Hunch-off has a joke break between rounds. You see the setup first, then tap for
 the punchline, and any joke can be shared. They come out at random and don't repeat until you've seen them all.
 
-Most of them are family jokes: puns, groan-worthy wordplay and gentle digs. Switch on **Grown-up jokes** from the
-home screen to add 25 cheekier ones, a little flirty or a little dark. They're off unless someone turns them on.
+Most of them are family jokes: puns, groan-worthy wordplay and gentle digs. Switch on **Grown-up jokes** in
+Settings to add 25 cheekier ones, a little flirty or a little dark. They're off unless someone turns them on.
 
-## 1,200 questions in 17 subjects
+## 1,200+ questions in 18 subjects
 
 | Subject | Questions | | Subject | Questions |
 |---|---:|---|---|---:|
@@ -52,16 +56,17 @@ home screen to add 25 cheekier ones, a little flirty or a little dark. They're o
 | Geography | 115 | | Nature & Animals | 60 |
 | Cities & Landmarks | 92 | | Maths | 60 |
 | Inventions & Brands | 82 | | Food & Drink | 60 |
-| Art & Culture | 79 | | Space | 52 |
-| History | 74 | | Cartoons & Animation | 47 |
-| Film & TV | 65 | | Cars & Motorbikes | 45 |
-| Music | 65 | | Fashion | 32 |
-| Leaders & Famous People | 64 | | | |
+| Art & Culture | 79 | | Words & Language | 60 |
+| History | 74 | | Space | 52 |
+| Film & TV | 65 | | Cartoons & Animation | 47 |
+| Music | 65 | | Cars & Motorbikes | 45 |
+| Leaders & Famous People | 64 | | Fashion | 32 |
 
 Sport covers football, the World Cup and the Champions League, tennis, the Olympics, the Tour de France and Formula
 One. Geography asks capitals both ways round ("Canberra is the capital of which country?"), and Cities & Landmarks
 takes in mountains, rivers and wonders from Everest and Damavand to the Grand Canyon. Leaders appear as history, never
-as party politics, and there are no questions about religion.
+as party politics, and there are no questions about religion. Words & Language covers where words come from,
+languages of the world, alphabets and wordplay.
 
 Every question is tagged **timeless** (anyone could know it), **classic** (from further back) or **modern** (more
 recent), and rated easy, medium or hard. Today's ten always includes at least one classic and one modern question.
@@ -91,7 +96,9 @@ Spotted a mistake? Every answer has a **Report this question** link, or
 ## Accessibility and privacy
 
 - Works on every screen size, from a small phone to a desktop
-- Large, clear buttons, readable fonts and strong colour contrast, with a dark mode that follows your device
+- Works offline once it has loaded, and can be added to a phone's home screen like an app
+- Large, clear buttons, readable text and strong colour contrast, in a dark look (the default) or a light one
+- Sound and a little buzz on phones for each answer, with one switch to turn both off
 - Full keyboard support: press 1 to 4 to answer and Enter for the next question
 - Screen readers are told whether each answer was right, and the fact that follows
 - Respects your device's reduced-motion setting
@@ -126,7 +133,9 @@ python3 -m pytest
 index.html               the page, with its icons
 assets/app.js            the game
 assets/styles.css        the design
-data/questions.json      all 1,200 questions, built by questions/build.py
+sw.js                    keeps a copy of the game for offline play
+manifest.webmanifest     lets phones add Hunchy to the home screen
+data/questions.json      every question, built by questions/build.py
 data/jokes.json          100 jokes, built by jokes/build_jokes.py
 questions/curated/       hand-written questions, one file per subject
 questions/generated.py   questions worked out from data: maths, countries, elements, planets
@@ -137,7 +146,7 @@ tests/                   checks every question, answer and joke
 
 ## Licence
 
-Code, questions and jokes are [MIT licensed](LICENSE). The Fredoka and Nunito fonts are under the
+Code, questions and jokes are [MIT licensed](LICENSE). The Urbanist and DM Mono fonts are under the
 [SIL Open Font License](assets/fonts/LICENSE.txt), and the dataset snapshots in `questions/datasets/` keep their
 [original licences](questions/datasets/README.md).
 

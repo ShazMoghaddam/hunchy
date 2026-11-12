@@ -1,7 +1,7 @@
-Fredoka and Nunito are licensed under the SIL Open Font License 1.1. Files from Fontsource (https://fontsource.org).
+Urbanist and DM Mono are licensed under the SIL Open Font License 1.1. Files from Fontsource (https://fontsource.org).
 
-=== Fredoka ===
-Copyright 2016 The Fredoka Project Authors (https://github.com/hafontia/Fredoka-One)
+=== Urbanist ===
+Copyright 2021 The Urbanist Project Authors (https://github.com/coreyhu/Urbanist) Urbanist-Italic[wght].ttf: Copyright 2021 The Urbanist Project Authors (https://github.com/coreyhu/Urbanist)
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:
@@ -95,8 +95,8 @@ DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
 OTHER DEALINGS IN THE FONT SOFTWARE.
 
-=== Nunito ===
-Copyright 2014 The Nunito Project Authors (https://github.com/googlefonts/nunito) Nunito-Italic[wght].ttf: Copyright 2014 The Nunito Project Authors (https://github.com/googlefonts/nunito)
+=== DM Mono ===
+Copyright 2020 The DM Mono Project Authors (https://www.github.com/googlefonts/dm-mono) DMMono-LightItalic.ttf: Copyright 2020 The DM Mono Project Authors (https://www.github.com/googlefonts/dm-mono) DMMono-Regular.ttf: Copyright 2020 The DM Mono Project Authors (https://www.github.com/googlefonts/dm-mono) DMMono-Italic.ttf: Copyright 2020 The DM Mono Project Authors (https://www.github.com/googlefonts/dm-mono) DMMono-Medium.ttf: Copyright 2020 The DM Mono Project Authors (https://www.github.com/googlefonts/dm-mono) DMMono-MediumItalic.ttf: Copyright 2020 The DM Mono Project Authors (https://www.github.com/googlefonts/dm-mono)
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:

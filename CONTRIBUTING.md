@@ -62,7 +62,11 @@ people. Every joke should be original, not copied from a joke book or website. R
 
 The game is plain HTML, CSS and JavaScript: `index.html`, `assets/app.js` and `assets/styles.css`. Run
 `python3 -m http.server 8000` and open http://localhost:8000 to try your changes. Please check them on a phone-sized
-screen, with a keyboard, and in dark mode.
+screen, with a keyboard, and in both the dark and light looks.
+
+If you add a file the game needs to load, add it to `SHELL` in `sw.js` too and change `VERSION`, so offline players
+get it. While testing, your browser may keep serving the old copy: a hard reload, or **Update on reload** in the
+browser's developer tools, fixes that.
 
 ## Pull requests
 

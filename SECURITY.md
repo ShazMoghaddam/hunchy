@@ -22,7 +22,7 @@ credit you in the advisory and the changelog unless you'd rather stay anonymous.
 
 In scope:
 
-- The game in `index.html` and `assets/`, for example text from a question, a player's name or a link that could run
+- The game in `index.html`, `sw.js` and `assets/`, for example text from a question, a player's name or a link that could run
   script in the page.
 - The scripts in `questions/` and the workflows in `.github/workflows/`.
 

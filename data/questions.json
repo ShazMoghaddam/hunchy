@@ -17,9 +17,10 @@
   "inventions": "Inventions & Brands",
   "cars": "Cars & Motorbikes",
   "fashion": "Fashion",
-  "cartoons": "Cartoons & Animation"
+  "cartoons": "Cartoons & Animation",
+  "words": "Words & Language"
  },
- "count": 1200,
+ "count": 1260,
  "questions": [
   {
    "id": "geo-capital-01",
@@ -23686,6 +23687,1190 @@
    "source": {
     "name": "Wikipedia: Hakuna Matata (song)",
     "url": "https://en.wikipedia.org/wiki/Hakuna_Matata_(song)"
+   }
+  },
+  {
+   "id": "words-001",
+   "category": "words",
+   "type": "choice",
+   "prompt": "How many letters are there in the English alphabet?",
+   "options": [
+    "26",
+    "24",
+    "25",
+    "28"
+   ],
+   "answer": 0,
+   "fact": "They come from the Latin alphabet. J, U and W were added much later than the rest.",
+   "era": "timeless",
+   "difficulty": 1,
+   "source": {
+    "name": "Wikipedia: English alphabet",
+    "url": "https://en.wikipedia.org/wiki/English_alphabet"
+   }
+  },
+  {
+   "id": "words-002",
+   "category": "words",
+   "type": "choice",
+   "prompt": "Which letter is used most often in written English?",
+   "options": [
+    "E",
+    "T",
+    "A",
+    "S"
+   ],
+   "answer": 0,
+   "fact": "E turns up in about one in every eight letters. T and A come next.",
+   "era": "timeless",
+   "difficulty": 2,
+   "source": {
+    "name": "Wikipedia: Letter frequency",
+    "url": "https://en.wikipedia.org/wiki/Letter_frequency"
+   }
+  },
+  {
+   "id": "words-003",
+   "category": "words",
+   "type": "choice",
+   "prompt": "Which alphabet is used to write Russian?",
+   "options": [
+    "Cyrillic",
+    "Latin",
+    "Greek",
+    "Arabic"
+   ],
+   "answer": 0,
+   "fact": "Cyrillic is also used for Ukrainian, Bulgarian, Serbian and many other languages.",
+   "era": "timeless",
+   "difficulty": 1,
+   "source": {
+    "name": "Wikipedia: Russian alphabet",
+    "url": "https://en.wikipedia.org/wiki/Russian_alphabet"
+   }
+  },
+  {
+   "id": "words-004",
+   "category": "words",
+   "type": "choice",
+   "prompt": "Which of these languages is written from right to left?",
+   "options": [
+    "Arabic",
+    "Greek",
+    "Hindi",
+    "Russian"
+   ],
+   "answer": 0,
+   "fact": "Hebrew and Persian are written from right to left too, though numbers usually run left to right.",
+   "era": "timeless",
+   "difficulty": 2,
+   "source": {
+    "name": "Wikipedia: Right-to-left script",
+    "url": "https://en.wikipedia.org/wiki/Right-to-left_script"
+   }
+  },
+  {
+   "id": "words-005",
+   "category": "words",
+   "type": "choice",
+   "prompt": "The word 'alphabet' comes from the first two letters of which alphabet?",
+   "options": [
+    "Greek",
+    "Latin",
+    "Hebrew",
+    "Cyrillic"
+   ],
+   "answer": 0,
+   "fact": "Alpha and beta are the first two letters of the Greek alphabet.",
+   "era": "timeless",
+   "difficulty": 1,
+   "source": {
+    "name": "Wikipedia: Greek alphabet",
+    "url": "https://en.wikipedia.org/wiki/Greek_alphabet"
+   }
+  },
+  {
+   "id": "words-006",
+   "category": "words",
+   "type": "choice",
+   "prompt": "What is the last letter of the Greek alphabet?",
+   "options": [
+    "Omega",
+    "Zeta",
+    "Sigma",
+    "Delta"
+   ],
+   "answer": 0,
+   "fact": "That's why 'alpha and omega' means the beginning and the end.",
+   "era": "timeless",
+   "difficulty": 2,
+   "source": {
+    "name": "Wikipedia: Omega",
+    "url": "https://en.wikipedia.org/wiki/Omega"
+   }
+  },
+  {
+   "id": "words-007",
+   "category": "words",
+   "type": "choice",
+   "prompt": "How many letters does the Hawaiian alphabet have?",
+   "options": [
+    "13",
+    "9",
+    "20",
+    "26"
+   ],
+   "answer": 0,
+   "fact": "Five vowels, seven consonants and the ʻokina, a mark that stands for a short pause in the voice.",
+   "era": "timeless",
+   "difficulty": 3,
+   "source": {
+    "name": "Wikipedia: Hawaiian alphabet",
+    "url": "https://en.wikipedia.org/wiki/Hawaiian_alphabet"
+   }
+  },
+  {
+   "id": "words-008",
+   "category": "words",
+   "type": "yes-no",
+   "prompt": "Is the letter Q always followed by a U in English words?",
+   "options": [
+    "Yes",
+    "No"
+   ],
+   "answer": 1,
+   "fact": "Words such as Qatar, Iraqi and qwerty break the rule, and Scrabble players love 'qi'.",
+   "era": "timeless",
+   "difficulty": 2,
+   "source": {
+    "name": "Wikipedia: List of English words containing Q not followed by U",
+    "url": "https://en.wikipedia.org/wiki/List_of_English_words_containing_Q_not_followed_by_U"
+   }
+  },
+  {
+   "id": "words-009",
+   "category": "words",
+   "type": "choice",
+   "prompt": "What is the QWERTY keyboard named after?",
+   "options": [
+    "The first six letters on its top row of letters",
+    "The man who invented it",
+    "A town in America",
+    "The sound the keys make"
+   ],
+   "answer": 0,
+   "fact": "The layout dates from typewriters in the 1870s.",
+   "era": "timeless",
+   "difficulty": 2,
+   "source": {
+    "name": "Wikipedia: QWERTY",
+    "url": "https://en.wikipedia.org/wiki/QWERTY"
+   }
+  },
+  {
+   "id": "words-010",
+   "category": "words",
+   "type": "choice",
+   "prompt": "In the NATO radio alphabet, which word stands for the letter Z?",
+   "options": [
+    "Zulu",
+    "Zebra",
+    "Zero",
+    "Zed"
+   ],
+   "answer": 0,
+   "fact": "The alphabet runs Alfa, Bravo, Charlie, and so on, so letters can't be misheard over a crackly radio.",
+   "era": "timeless",
+   "difficulty": 2,
+   "source": {
+    "name": "Wikipedia: NATO phonetic alphabet",
+    "url": "https://en.wikipedia.org/wiki/NATO_phonetic_alphabet"
+   }
+  },
+  {
+   "id": "words-011",
+   "category": "words",
+   "type": "choice",
+   "prompt": "Which language does the word 'kindergarten' come from?",
+   "options": [
+    "German",
+    "Dutch",
+    "French",
+    "Swedish"
+   ],
+   "answer": 0,
+   "fact": "It means 'children's garden'. Friedrich Fröbel opened the first one in Germany in 1837.",
+   "era": "timeless",
+   "difficulty": 1,
+   "source": {
+    "name": "Wikipedia: Kindergarten",
+    "url": "https://en.wikipedia.org/wiki/Kindergarten"
+   }
+  },
+  {
+   "id": "words-012",
+   "category": "words",
+   "type": "choice",
+   "prompt": "Which language does the word 'shampoo' come from?",
+   "options": [
+    "Hindi",
+    "French",
+    "Arabic",
+    "Persian"
+   ],
+   "answer": 0,
+   "fact": "It comes from a word meaning 'to press or knead'. Sake Dean Mahomed opened shampooing baths in Brighton in 1814.",
+   "era": "timeless",
+   "difficulty": 3,
+   "source": {
+    "name": "Wikipedia: Shampoo",
+    "url": "https://en.wikipedia.org/wiki/Shampoo"
+   }
+  },
+  {
+   "id": "words-013",
+   "category": "words",
+   "type": "choice",
+   "prompt": "The word 'robot' was first used in a play from 1920. Which language does it come from?",
+   "options": [
+    "Czech",
+    "Russian",
+    "German",
+    "Polish"
+   ],
+   "answer": 0,
+   "fact": "Karel Čapek's play R.U.R. used it, from 'robota', meaning forced labour. His brother Josef suggested the word.",
+   "era": "timeless",
+   "difficulty": 2,
+   "source": {
+    "name": "Wikipedia: Robot",
+    "url": "https://en.wikipedia.org/wiki/Robot"
+   }
+  },
+  {
+   "id": "words-014",
+   "category": "words",
+   "type": "choice",
+   "prompt": "Which language does the word 'tsunami' come from?",
+   "options": [
+    "Japanese",
+    "Chinese",
+    "Indonesian",
+    "Hawaiian"
+   ],
+   "answer": 0,
+   "fact": "It means 'harbour wave'.",
+   "era": "timeless",
+   "difficulty": 1,
+   "source": {
+    "name": "Wikipedia: Tsunami",
+    "url": "https://en.wikipedia.org/wiki/Tsunami"
+   }
+  },
+  {
+   "id": "words-015",
+   "category": "words",
+   "type": "choice",
+   "prompt": "Which language does the word 'safari' come from?",
+   "options": [
+    "Swahili",
+    "Zulu",
+    "Afrikaans",
+    "Hindi"
+   ],
+   "answer": 0,
+   "fact": "In Swahili, safari simply means 'journey'.",
+   "era": "timeless",
+   "difficulty": 2,
+   "source": {
+    "name": "Wikipedia: Safari",
+    "url": "https://en.wikipedia.org/wiki/Safari"
+   }
+  },
+  {
+   "id": "words-016",
+   "category": "words",
+   "type": "choice",
+   "prompt": "The word 'avocado' comes, through Spanish, from which language?",
+   "options": [
+    "Nahuatl, the language of the Aztecs",
+    "Latin",
+    "Arabic",
+    "Portuguese"
+   ],
+   "answer": 0,
+   "fact": "The Aztec word was āhuacatl. Tomato and chilli come from Nahuatl too.",
+   "era": "timeless",
+   "difficulty": 3,
+   "source": {
+    "name": "Wikipedia: Avocado",
+    "url": "https://en.wikipedia.org/wiki/Avocado"
+   }
+  },
+  {
+   "id": "words-017",
+   "category": "words",
+   "type": "choice",
+   "prompt": "Which language does the word 'algebra' come from?",
+   "options": [
+    "Arabic",
+    "Greek",
+    "Latin",
+    "Persian"
+   ],
+   "answer": 0,
+   "fact": "It comes from 'al-jabr' in the title of a maths book written in Baghdad in the 800s.",
+   "era": "timeless",
+   "difficulty": 2,
+   "source": {
+    "name": "Wikipedia: Algebra",
+    "url": "https://en.wikipedia.org/wiki/Algebra"
+   }
+  },
+  {
+   "id": "words-018",
+   "category": "words",
+   "type": "choice",
+   "prompt": "The word 'bungalow' comes from a word meaning 'from Bengal' in which language?",
+   "options": [
+    "Hindi",
+    "Portuguese",
+    "Malay",
+    "Tamil"
+   ],
+   "answer": 0,
+   "fact": "British people in India used it for low, single-storey houses with a veranda.",
+   "era": "timeless",
+   "difficulty": 3,
+   "source": {
+    "name": "Wikipedia: Bungalow",
+    "url": "https://en.wikipedia.org/wiki/Bungalow"
+   }
+  },
+  {
+   "id": "words-019",
+   "category": "words",
+   "type": "yes-no",
+   "prompt": "Do we know for certain where the word 'quiz' comes from?",
+   "options": [
+    "Yes",
+    "No"
+   ],
+   "answer": 1,
+   "fact": "A famous story says a Dublin theatre manager chalked 'quiz' on walls to win a bet, but there's no evidence for it. Its origin is still a mystery.",
+   "era": "timeless",
+   "difficulty": 3,
+   "source": {
+    "name": "Merriam-Webster: the history of 'quiz'",
+    "url": "https://www.merriam-webster.com/wordplay/word-history-of-quiz"
+   }
+  },
+  {
+   "id": "words-020",
+   "category": "words",
+   "type": "choice",
+   "prompt": "Which of these words is first recorded in Shakespeare's plays?",
+   "options": [
+    "Eyeball",
+    "Robot",
+    "Selfie",
+    "Telephone"
+   ],
+   "answer": 0,
+   "fact": "Shakespeare is also credited with 'swagger', 'fashionable' and 'uncomfortable'.",
+   "era": "timeless",
+   "difficulty": 2,
+   "source": {
+    "name": "Mental Floss: 21 words created by Shakespeare",
+    "url": "https://mentalfloss.com/article/48657/20-words-"
+   }
+  },
+  {
+   "id": "words-021",
+   "category": "words",
+   "type": "choice",
+   "prompt": "Which language does the word 'ski' come from?",
+   "options": [
+    "Norwegian",
+    "German",
+    "Swiss German",
+    "Finnish"
+   ],
+   "answer": 0,
+   "fact": "It comes from an Old Norse word for a split piece of wood.",
+   "era": "timeless",
+   "difficulty": 2,
+   "source": {
+    "name": "Wikipedia: Ski",
+    "url": "https://en.wikipedia.org/wiki/Ski"
+   }
+  },
+  {
+   "id": "words-022",
+   "category": "words",
+   "type": "choice",
+   "prompt": "Which language does the word 'yoghurt' come from?",
+   "options": [
+    "Turkish",
+    "Greek",
+    "Bulgarian",
+    "Persian"
+   ],
+   "answer": 0,
+   "fact": "It comes from a Turkish word meaning to knead or thicken.",
+   "era": "timeless",
+   "difficulty": 2,
+   "source": {
+    "name": "Wikipedia: Yogurt",
+    "url": "https://en.wikipedia.org/wiki/Yogurt"
+   }
+  },
+  {
+   "id": "words-023",
+   "category": "words",
+   "type": "choice",
+   "prompt": "Which language does the word 'cookie' come from?",
+   "options": [
+    "Dutch",
+    "German",
+    "French",
+    "Danish"
+   ],
+   "answer": 0,
+   "fact": "It comes from 'koekje', meaning 'little cake'.",
+   "era": "timeless",
+   "difficulty": 2,
+   "source": {
+    "name": "Wikipedia: Cookie",
+    "url": "https://en.wikipedia.org/wiki/Cookie"
+   }
+  },
+  {
+   "id": "words-024",
+   "category": "words",
+   "type": "yes-no",
+   "prompt": "Does the word 'emoji' come from the English word 'emotion'?",
+   "options": [
+    "Yes",
+    "No"
+   ],
+   "answer": 1,
+   "fact": "It's Japanese: 'e' means picture and 'moji' means character. The likeness to 'emotion' is a happy accident.",
+   "era": "modern",
+   "difficulty": 2,
+   "source": {
+    "name": "Wikipedia: Emoji",
+    "url": "https://en.wikipedia.org/wiki/Emoji"
+   }
+  },
+  {
+   "id": "words-025",
+   "category": "words",
+   "type": "choice",
+   "prompt": "What does 'karaoke' mean in Japanese?",
+   "options": [
+    "Empty orchestra",
+    "Sing along",
+    "Loud voice",
+    "Happy music"
+   ],
+   "answer": 0,
+   "fact": "The music plays without a singer, leaving the space for you.",
+   "era": "timeless",
+   "difficulty": 3,
+   "source": {
+    "name": "Wikipedia: Karaoke",
+    "url": "https://en.wikipedia.org/wiki/Karaoke"
+   }
+  },
+  {
+   "id": "words-026",
+   "category": "words",
+   "type": "choice",
+   "prompt": "The radio distress call 'Mayday' comes from which language?",
+   "options": [
+    "French",
+    "Spanish",
+    "German",
+    "Latin"
+   ],
+   "answer": 0,
+   "fact": "It comes from 'm'aider', as in 'come and help me'. It was chosen in 1923 by a radio officer at Croydon airport.",
+   "era": "timeless",
+   "difficulty": 2,
+   "source": {
+    "name": "Wikipedia: Mayday",
+    "url": "https://en.wikipedia.org/wiki/Mayday"
+   }
+  },
+  {
+   "id": "words-027",
+   "category": "words",
+   "type": "choice",
+   "prompt": "Which word was Oxford Dictionaries' Word of the Year in 2013?",
+   "options": [
+    "Selfie",
+    "Hashtag",
+    "Vape",
+    "Emoji"
+   ],
+   "answer": 0,
+   "fact": "Vape was chosen in 2014.",
+   "era": "modern",
+   "difficulty": 2,
+   "source": {
+    "name": "Wikipedia: Selfie",
+    "url": "https://en.wikipedia.org/wiki/Selfie"
+   }
+  },
+  {
+   "id": "words-028",
+   "category": "words",
+   "type": "yes-no",
+   "prompt": "Did a word that doesn't mean anything once get printed in a major dictionary by mistake?",
+   "options": [
+    "Yes",
+    "No"
+   ],
+   "answer": 0,
+   "fact": "'Dord' appeared in Webster's dictionary in 1934, after a note saying 'D or d' was misread. It stayed for years before anyone noticed.",
+   "era": "classic",
+   "difficulty": 3,
+   "source": {
+    "name": "Wikipedia: Dord",
+    "url": "https://en.wikipedia.org/wiki/Dord"
+   }
+  },
+  {
+   "id": "words-029",
+   "category": "words",
+   "type": "choice",
+   "prompt": "'Piano' is short for 'pianoforte'. What does that mean in Italian?",
+   "options": [
+    "Soft-loud",
+    "Many strings",
+    "Little music",
+    "Big keys"
+   ],
+   "answer": 0,
+   "fact": "Earlier keyboards couldn't change volume. The pianoforte could play softly or loudly depending on how hard you pressed.",
+   "era": "timeless",
+   "difficulty": 3,
+   "source": {
+    "name": "Wikipedia: Piano",
+    "url": "https://en.wikipedia.org/wiki/Piano"
+   }
+  },
+  {
+   "id": "words-030",
+   "category": "words",
+   "type": "choice",
+   "prompt": "What is the main language of Brazil?",
+   "options": [
+    "Portuguese",
+    "Spanish",
+    "Italian",
+    "French"
+   ],
+   "answer": 0,
+   "fact": "Brazil has more Portuguese speakers than Portugal, by about 20 times.",
+   "era": "timeless",
+   "difficulty": 1,
+   "source": {
+    "name": "Wikipedia: Brazilian Portuguese",
+    "url": "https://en.wikipedia.org/wiki/Brazilian_Portuguese"
+   }
+  },
+  {
+   "id": "words-031",
+   "category": "words",
+   "type": "higher-lower",
+   "prompt": "Wales has two official languages. Does Switzerland have more or fewer national languages?",
+   "options": [
+    "More",
+    "Fewer"
+   ],
+   "answer": 0,
+   "fact": "Switzerland has four: German, French, Italian and Romansh.",
+   "era": "timeless",
+   "difficulty": 2,
+   "source": {
+    "name": "Wikipedia: Languages of Switzerland",
+    "url": "https://en.wikipedia.org/wiki/Languages_of_Switzerland"
+   }
+  },
+  {
+   "id": "words-032",
+   "category": "words",
+   "type": "choice",
+   "prompt": "In which country is Afrikaans mainly spoken?",
+   "options": [
+    "South Africa",
+    "The Netherlands",
+    "Kenya",
+    "Nigeria"
+   ],
+   "answer": 0,
+   "fact": "Afrikaans grew out of Dutch, so Dutch and Afrikaans speakers can often understand each other.",
+   "era": "timeless",
+   "difficulty": 2,
+   "source": {
+    "name": "Wikipedia: Afrikaans",
+    "url": "https://en.wikipedia.org/wiki/Afrikaans"
+   }
+  },
+  {
+   "id": "words-033",
+   "category": "words",
+   "type": "choice",
+   "prompt": "How many official languages does the United Nations use?",
+   "options": [
+    "6",
+    "2",
+    "4",
+    "10"
+   ],
+   "answer": 0,
+   "fact": "Arabic, Chinese, English, French, Russian and Spanish.",
+   "era": "timeless",
+   "difficulty": 3,
+   "source": {
+    "name": "Wikipedia: Official languages of the United Nations",
+    "url": "https://en.wikipedia.org/wiki/Official_languages_of_the_United_Nations"
+   }
+  },
+  {
+   "id": "words-034",
+   "category": "words",
+   "type": "choice",
+   "prompt": "What is the national language of Pakistan?",
+   "options": [
+    "Urdu",
+    "Hindi",
+    "Punjabi",
+    "Persian"
+   ],
+   "answer": 0,
+   "fact": "English is an official language there too.",
+   "era": "timeless",
+   "difficulty": 2,
+   "source": {
+    "name": "Wikipedia: Urdu",
+    "url": "https://en.wikipedia.org/wiki/Urdu"
+   }
+  },
+  {
+   "id": "words-035",
+   "category": "words",
+   "type": "choice",
+   "prompt": "In which country is Catalan the only official language?",
+   "options": [
+    "Andorra",
+    "Spain",
+    "Monaco",
+    "Malta"
+   ],
+   "answer": 0,
+   "fact": "In Spain, Catalan is official in Catalonia alongside Spanish.",
+   "era": "timeless",
+   "difficulty": 3,
+   "source": {
+    "name": "Wikipedia: Andorra",
+    "url": "https://en.wikipedia.org/wiki/Andorra"
+   }
+  },
+  {
+   "id": "words-036",
+   "category": "words",
+   "type": "choice",
+   "prompt": "Basque is spoken in parts of Spain and France. Which language is it related to?",
+   "options": [
+    "None that anyone has found",
+    "Spanish",
+    "French",
+    "Finnish"
+   ],
+   "answer": 0,
+   "fact": "Basque is a 'language isolate': no link to any other living language has been proved.",
+   "era": "timeless",
+   "difficulty": 3,
+   "source": {
+    "name": "Wikipedia: Basque language",
+    "url": "https://en.wikipedia.org/wiki/Basque_language"
+   }
+  },
+  {
+   "id": "words-037",
+   "category": "words",
+   "type": "choice",
+   "prompt": "What does 'déjà vu' mean in French?",
+   "options": [
+    "Already seen",
+    "Good luck",
+    "See you soon",
+    "Too late"
+   ],
+   "answer": 0,
+   "fact": "It's the strange feeling that you've lived a moment before.",
+   "era": "timeless",
+   "difficulty": 2,
+   "source": {
+    "name": "Wikipedia: Déjà vu",
+    "url": "https://en.wikipedia.org/wiki/Déjà_vu"
+   }
+  },
+  {
+   "id": "words-038",
+   "category": "words",
+   "type": "choice",
+   "prompt": "In Italian, what does 'ciao' mean?",
+   "options": [
+    "Both hello and goodbye",
+    "Only hello",
+    "Thank you",
+    "Please"
+   ],
+   "answer": 0,
+   "fact": "It comes from an old Venetian phrase meaning 'I am your slave', said as a friendly 'at your service'.",
+   "era": "timeless",
+   "difficulty": 2,
+   "source": {
+    "name": "Wikipedia: Ciao",
+    "url": "https://en.wikipedia.org/wiki/Ciao"
+   }
+  },
+  {
+   "id": "words-039",
+   "category": "words",
+   "type": "choice",
+   "prompt": "The German word 'Handschuh' means 'hand shoe'. What is it?",
+   "options": [
+    "A glove",
+    "A sock",
+    "A ring",
+    "A watch"
+   ],
+   "answer": 0,
+   "fact": "German is full of words built like this. A 'Kühlschrank', a 'cool cupboard', is a fridge.",
+   "era": "timeless",
+   "difficulty": 2,
+   "source": {
+    "name": "Wiktionary: Handschuh",
+    "url": "https://en.wiktionary.org/wiki/Handschuh"
+   }
+  },
+  {
+   "id": "words-040",
+   "category": "words",
+   "type": "choice",
+   "prompt": "What do Americans call the boot of a car?",
+   "options": [
+    "The trunk",
+    "The hood",
+    "The deck",
+    "The back"
+   ],
+   "answer": 0,
+   "fact": "Americans call the bonnet the hood.",
+   "era": "timeless",
+   "difficulty": 1,
+   "source": {
+    "name": "Wikipedia: Trunk (car)",
+    "url": "https://en.wikipedia.org/wiki/Trunk_(car)"
+   }
+  },
+  {
+   "id": "words-041",
+   "category": "words",
+   "type": "choice",
+   "prompt": "What do Americans call a full stop?",
+   "options": [
+    "A period",
+    "A dot",
+    "A point",
+    "A stop"
+   ],
+   "answer": 0,
+   "fact": "Americans also say 'period' at the end of a sentence to mean 'and that's final'.",
+   "era": "timeless",
+   "difficulty": 1,
+   "source": {
+    "name": "Wikipedia: Full stop",
+    "url": "https://en.wikipedia.org/wiki/Full_stop"
+   }
+  },
+  {
+   "id": "words-042",
+   "category": "words",
+   "type": "choice",
+   "prompt": "What do you call a word that reads the same backwards, like 'level'?",
+   "options": [
+    "A palindrome",
+    "An anagram",
+    "A homophone",
+    "An acronym"
+   ],
+   "answer": 0,
+   "fact": "'Racecar' and 'kayak' are palindromes too.",
+   "era": "timeless",
+   "difficulty": 1,
+   "source": {
+    "name": "Wikipedia: Palindrome",
+    "url": "https://en.wikipedia.org/wiki/Palindrome"
+   }
+  },
+  {
+   "id": "words-043",
+   "category": "words",
+   "type": "choice",
+   "prompt": "Which of these is not an anagram of 'listen'?",
+   "options": [
+    "Listed",
+    "Silent",
+    "Tinsel",
+    "Enlist"
+   ],
+   "answer": 0,
+   "fact": "An anagram uses exactly the same letters. 'Listed' swaps the N for a D.",
+   "era": "timeless",
+   "difficulty": 2,
+   "source": {
+    "name": "Wikipedia: Anagram",
+    "url": "https://en.wikipedia.org/wiki/Anagram"
+   }
+  },
+  {
+   "id": "words-044",
+   "category": "words",
+   "type": "choice",
+   "prompt": "Which pair of words are homophones?",
+   "options": [
+    "Bear and bare",
+    "Cat and cot",
+    "Tough and though",
+    "Lead and leaf"
+   ],
+   "answer": 0,
+   "fact": "Homophones sound the same but are spelled differently and mean different things.",
+   "era": "timeless",
+   "difficulty": 2,
+   "source": {
+    "name": "Wikipedia: Homophone",
+    "url": "https://en.wikipedia.org/wiki/Homophone"
+   }
+  },
+  {
+   "id": "words-045",
+   "category": "words",
+   "type": "yes-no",
+   "prompt": "Is 'scuba' short for something?",
+   "options": [
+    "Yes",
+    "No"
+   ],
+   "answer": 0,
+   "fact": "It stands for self-contained underwater breathing apparatus.",
+   "era": "timeless",
+   "difficulty": 2,
+   "source": {
+    "name": "Wikipedia: Scuba set",
+    "url": "https://en.wikipedia.org/wiki/Scuba_set"
+   }
+  },
+  {
+   "id": "words-046",
+   "category": "words",
+   "type": "choice",
+   "prompt": "What does the A in LASER stand for?",
+   "options": [
+    "Amplification",
+    "Atomic",
+    "Accelerated",
+    "Array"
+   ],
+   "answer": 0,
+   "fact": "LASER is short for light amplification by stimulated emission of radiation.",
+   "era": "timeless",
+   "difficulty": 3,
+   "source": {
+    "name": "Wikipedia: Laser",
+    "url": "https://en.wikipedia.org/wiki/Laser"
+   }
+  },
+  {
+   "id": "words-047",
+   "category": "words",
+   "type": "choice",
+   "prompt": "What does 'i.e.' mean?",
+   "options": [
+    "That is",
+    "For example",
+    "And so on",
+    "Note well"
+   ],
+   "answer": 0,
+   "fact": "It's short for the Latin 'id est'. 'For example' is e.g.",
+   "era": "timeless",
+   "difficulty": 2,
+   "source": {
+    "name": "Wikipedia: List of Latin abbreviations",
+    "url": "https://en.wikipedia.org/wiki/List_of_Latin_abbreviations"
+   }
+  },
+  {
+   "id": "words-048",
+   "category": "words",
+   "type": "choice",
+   "prompt": "Which is usually called the longest word in major English dictionaries?",
+   "options": [
+    "Pneumonoultramicroscopicsilicovolcanoconiosis",
+    "Antidisestablishmentarianism",
+    "Supercalifragilisticexpialidocious",
+    "Floccinaucinihilipilification"
+   ],
+   "answer": 0,
+   "fact": "It's a lung disease caused by breathing in very fine dust. It was invented in 1935 to be the longest word.",
+   "era": "timeless",
+   "difficulty": 3,
+   "source": {
+    "name": "Wikipedia: Longest word in English",
+    "url": "https://en.wikipedia.org/wiki/Longest_word_in_English"
+   }
+  },
+  {
+   "id": "words-049",
+   "category": "words",
+   "type": "higher-lower",
+   "prompt": "'Antidisestablishmentarianism' has 28 letters. Does 'pneumonoultramicroscopicsilicovolcanoconiosis' have more or fewer?",
+   "options": [
+    "More",
+    "Fewer"
+   ],
+   "answer": 0,
+   "fact": "It has 45 letters.",
+   "era": "timeless",
+   "difficulty": 2,
+   "source": {
+    "name": "Wikipedia: Longest word in English",
+    "url": "https://en.wikipedia.org/wiki/Longest_word_in_English"
+   }
+  },
+  {
+   "id": "words-050",
+   "category": "words",
+   "type": "choice",
+   "prompt": "What is a group of flamingos called?",
+   "options": [
+    "A flamboyance",
+    "A pride",
+    "A parliament",
+    "A pod"
+   ],
+   "answer": 0,
+   "fact": "A pride is lions, a parliament is owls and a pod is whales or dolphins.",
+   "era": "timeless",
+   "difficulty": 3,
+   "source": {
+    "name": "Wikipedia: List of English terms of venery, by animal",
+    "url": "https://en.wikipedia.org/wiki/List_of_English_terms_of_venery,_by_animal"
+   }
+  },
+  {
+   "id": "words-051",
+   "category": "words",
+   "type": "choice",
+   "prompt": "What is a group of whales called?",
+   "options": [
+    "A pod",
+    "A flock",
+    "A herd",
+    "A shoal"
+   ],
+   "answer": 0,
+   "fact": "A shoal is fish.",
+   "era": "timeless",
+   "difficulty": 2,
+   "source": {
+    "name": "Wikipedia: List of English terms of venery, by animal",
+    "url": "https://en.wikipedia.org/wiki/List_of_English_terms_of_venery,_by_animal"
+   }
+  },
+  {
+   "id": "words-052",
+   "category": "words",
+   "type": "choice",
+   "prompt": "In English Scrabble, which two letters are worth 10 points?",
+   "options": [
+    "Q and Z",
+    "X and J",
+    "K and V",
+    "Y and W"
+   ],
+   "answer": 0,
+   "fact": "J and X are worth 8.",
+   "era": "timeless",
+   "difficulty": 3,
+   "source": {
+    "name": "Wikipedia: Scrabble letter distributions",
+    "url": "https://en.wikipedia.org/wiki/Scrabble_letter_distributions"
+   }
+  },
+  {
+   "id": "words-053",
+   "category": "words",
+   "type": "choice",
+   "prompt": "How many tiles are there in a standard English Scrabble set?",
+   "options": [
+    "100",
+    "50",
+    "88",
+    "120"
+   ],
+   "answer": 0,
+   "fact": "Two of them are blanks, which can stand for any letter.",
+   "era": "timeless",
+   "difficulty": 3,
+   "source": {
+    "name": "Wikipedia: Scrabble letter distributions",
+    "url": "https://en.wikipedia.org/wiki/Scrabble_letter_distributions"
+   }
+  },
+  {
+   "id": "words-054",
+   "category": "words",
+   "type": "choice",
+   "prompt": "What is the word for a word that sounds like what it describes, such as 'buzz'?",
+   "options": [
+    "Onomatopoeia",
+    "Alliteration",
+    "Metaphor",
+    "Simile"
+   ],
+   "answer": 0,
+   "fact": "'Sizzle', 'pop' and 'splash' are onomatopoeia too.",
+   "era": "timeless",
+   "difficulty": 2,
+   "source": {
+    "name": "Wikipedia: Onomatopoeia",
+    "url": "https://en.wikipedia.org/wiki/Onomatopoeia"
+   }
+  },
+  {
+   "id": "words-055",
+   "category": "words",
+   "type": "choice",
+   "prompt": "'She sells seashells by the seashore' is an example of what?",
+   "options": [
+    "Alliteration",
+    "Onomatopoeia",
+    "A palindrome",
+    "Rhyme"
+   ],
+   "answer": 0,
+   "fact": "Alliteration repeats the same sound at the start of words close together.",
+   "era": "timeless",
+   "difficulty": 2,
+   "source": {
+    "name": "Wikipedia: Alliteration",
+    "url": "https://en.wikipedia.org/wiki/Alliteration"
+   }
+  },
+  {
+   "id": "words-056",
+   "category": "words",
+   "type": "choice",
+   "prompt": "What do you call a word that means the opposite of another, like 'hot' and 'cold'?",
+   "options": [
+    "An antonym",
+    "A synonym",
+    "A homonym",
+    "An acronym"
+   ],
+   "answer": 0,
+   "fact": "A synonym means the same, like 'big' and 'large'.",
+   "era": "timeless",
+   "difficulty": 1,
+   "source": {
+    "name": "Wikipedia: Opposite (semantics)",
+    "url": "https://en.wikipedia.org/wiki/Opposite_(semantics)"
+   }
+  },
+  {
+   "id": "words-057",
+   "category": "words",
+   "type": "choice",
+   "prompt": "Which word turns up more often than any other in written English?",
+   "options": [
+    "The",
+    "And",
+    "A",
+    "Of"
+   ],
+   "answer": 0,
+   "fact": "'The' makes up roughly one in every 20 words people write. 'Be' and 'to' come next in most counts.",
+   "era": "timeless",
+   "difficulty": 2,
+   "source": {
+    "name": "Wikipedia: Most common words in English",
+    "url": "https://en.wikipedia.org/wiki/Most_common_words_in_English"
+   }
+  },
+  {
+   "id": "words-058",
+   "category": "words",
+   "type": "higher-lower",
+   "prompt": "A haiku has 3 lines. Does a limerick have more or fewer?",
+   "options": [
+    "More",
+    "Fewer"
+   ],
+   "answer": 0,
+   "fact": "A limerick has 5 lines, and the first, second and fifth rhyme.",
+   "era": "timeless",
+   "difficulty": 2,
+   "source": {
+    "name": "Wikipedia: Limerick (poetry)",
+    "url": "https://en.wikipedia.org/wiki/Limerick_(poetry)"
+   }
+  },
+  {
+   "id": "words-059",
+   "category": "words",
+   "type": "choice",
+   "prompt": "How many lines does a sonnet have?",
+   "options": [
+    "14",
+    "10",
+    "12",
+    "16"
+   ],
+   "answer": 0,
+   "fact": "Shakespeare wrote 154 of them.",
+   "era": "timeless",
+   "difficulty": 2,
+   "source": {
+    "name": "Wikipedia: Sonnet",
+    "url": "https://en.wikipedia.org/wiki/Sonnet"
+   }
+  },
+  {
+   "id": "words-060",
+   "category": "words",
+   "type": "choice",
+   "prompt": "What does 'www' stand for at the start of a web address?",
+   "options": [
+    "World Wide Web",
+    "Wide Web Window",
+    "World Web Wire",
+    "Web With Words"
+   ],
+   "answer": 0,
+   "fact": "Tim Berners-Lee invented the World Wide Web in 1989.",
+   "era": "timeless",
+   "difficulty": 1,
+   "source": {
+    "name": "Wikipedia: World Wide Web",
+    "url": "https://en.wikipedia.org/wiki/World_Wide_Web"
    }
   }
  ]
