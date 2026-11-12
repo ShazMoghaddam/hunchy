@@ -37,7 +37,7 @@
   const icon = (name, cls = "") => `<svg class="icon ${cls}" aria-hidden="true"><use href="#i-${name}"/></svg>`;
   const say = (text) => { announce.textContent = ""; setTimeout(() => { announce.textContent = text; }, 30); };
 
-  // Dates use the player's own calendar, so a whole family on one sofa shares the same daily ten.
+  // Dates use the player's own calendar, so everyone in the same room shares the same daily ten.
   const todayKey = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; };
   const dayBefore = (key) => { const d = new Date(key + "T12:00:00"); d.setDate(d.getDate() - 1); return d.toISOString().slice(0, 10); };
   const niceDate = (key) => new Date(key + "T12:00:00").toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" });
@@ -236,7 +236,7 @@
         <div class="modes">
           <button class="piece mode quick" data-go="quick-setup"><span class="badge">${icon("bolt")}</span><span class="text">Quick round<small>Ten questions from the subjects you choose</small></span></button>
           <button class="piece mode lives" data-go="lives"><span class="badge">${icon("heart")}</span><span class="text">Three lives<small>Keep going until you've got three wrong. Best: ${store.get("best-lives", 0)}</small></span></button>
-          <button class="piece mode hunchoff" data-go="hunchoff-setup"><span class="badge">${icon("family")}</span><span class="text">Hunch-off<small>Take turns on one phone</small></span></button>
+          <button class="piece mode hunchoff" data-go="hunchoff-setup"><span class="badge">${icon("players")}</span><span class="text">Hunch-off<small>Take turns on one phone</small></span></button>
           <button class="piece mode stats" data-go="stats"><span class="badge">${icon("chart")}</span><span class="text">Your stats<small>Best subjects, streaks and scores</small></span></button>
         </div>
 
@@ -253,7 +253,7 @@
             </div>
           </div>
           <div class="setting">
-            <span class="what" id="gu-label"><strong>Grown-up jokes</strong><small>${grownUps ? "On. Cheekier jokes are in the mix." : "Off. Every joke is fine for the whole family."}</small></span>
+            <span class="what" id="gu-label"><strong>Grown-up jokes</strong><small>${grownUps ? "On. Cheekier jokes are in the mix." : "Off. Every joke is fine for everyone."}</small></span>
             <button class="switch" role="switch" aria-checked="${grownUps}" aria-labelledby="gu-label" data-grownups><span class="switch-track" aria-hidden="true"><span class="switch-thumb"></span></span></button>
           </div>
           <div class="setting">
@@ -668,7 +668,7 @@
   // Share text only ever says how someone did, never which answers were right, so it can't spoil today's ten.
   let shareResult = null;
 
-  async function share(text, copied = "Copied. Paste it into your family chat.") {
+  async function share(text, copied = "Copied. Paste it into your group chat.") {
     try {
       if (navigator.share) { await navigator.share({ text }); return; }
       await navigator.clipboard.writeText(text);
@@ -686,7 +686,7 @@
     const row = done.results.map((r) => (r ? "+" : "-")).join("");
     const s = currentStreak();
     share(`Hunchy, ${niceDate(key)}: ${done.score}/${ROUND} [${row}]${s > 1 ? `, ${s} day streak` : ""}. Play today's ten: ${SITE}`,
-      "Score copied. Paste it into your family chat.");
+      "Score copied. Paste it into your group chat.");
   }
 
   // Jokes ------------------------------------------------------------------------------------
@@ -767,7 +767,7 @@
     const punch = e.target.closest("[data-punch]");
     if (punch) return revealPunchline(punch);
     if (e.target.closest("[data-joke-share]") && shownJoke) {
-      return share(`${shownJoke.setup}\n${shownJoke.punchline}\n\nFrom Hunchy, a free family quiz: ${SITE}`, "Joke copied. Go and make someone groan.");
+      return share(`${shownJoke.setup}\n${shownJoke.punchline}\n\nFrom Hunchy, a free quiz for any get-together: ${SITE}`, "Joke copied. Go and make someone groan.");
     }
     if (e.target.closest("[data-joke-next]")) return nextJoke();
     if (e.target.closest("[data-sound]")) {

@@ -46,7 +46,7 @@ SAME_NAME = {"Luxembourg", "Monaco", "San Marino", "Kuwait", "Panama", "Guatemal
 # Countries whose only 'coast' is on the Caspian, which some count as a sea: too disputed for a yes or no.
 CASPIAN = {"Azerbaijan", "Kazakhstan", "Turkmenistan"}
 
-# How well known a country is, for setting difficulty: 1 = most children know it.
+# How well known a country is, for setting difficulty: 1 = almost everyone has heard of it.
 KNOWN = {"Austria", "Belgium", "Chile", "Colombia", "Croatia", "Cuba", "Denmark", "Finland", "Iceland", "Jamaica",
          "Kenya", "Morocco", "Nepal", "Norway", "Peru", "Poland", "South Korea", "Sweden", "Switzerland", "Thailand",
          "Turkey", "Ukraine", "Vietnam", "Nigeria", "Philippines", "Indonesia", "Pakistan", "Iran", "Iraq", "Malta",

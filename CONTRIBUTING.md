@@ -53,7 +53,7 @@ change together with the updated `data/questions.json`.
 
 ## Writing a joke
 
-Jokes live in [`jokes/build_jokes.py`](jokes/build_jokes.py) as pairs of setup and punchline. `FAMILY` jokes are
+Jokes live in [`jokes/build_jokes.py`](jokes/build_jokes.py) as pairs of setup and punchline. `EVERYONE` jokes are
 for everyone; `GROWN_UPS` jokes can be cheekier, flirtier or a bit darker, but never crude, cruel or about real
 people. Every joke should be original, not copied from a joke book or website. Rebuild with
 `python3 jokes/build_jokes.py`, then run the tests.
