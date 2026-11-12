@@ -1,0 +1,17 @@
+name: Idea or new question
+description: Suggest a question, a subject or a new way to play
+title: "[Idea] "
+labels: ["idea"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea
+      placeholder: e.g. A question about the year the first Harry Potter film came out.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source for the answer (for question ideas)
+      placeholder: https://

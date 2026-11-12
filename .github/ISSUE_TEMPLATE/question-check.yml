@@ -1,0 +1,25 @@
+name: Question check
+description: Think an answer is wrong or out of date? Tell us here.
+title: "Question check: "
+labels: ["question-check"]
+body:
+  - type: input
+    id: question
+    attributes:
+      label: The question
+      description: Copy it from the game, or use the Report this question link after answering, which fills this in for you.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What looks wrong?
+      placeholder: e.g. The answer says 1997, but the film came out in 1998.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Where did you see the right answer?
+      description: A link to a reliable source helps us fix it quickly.
+      placeholder: https://

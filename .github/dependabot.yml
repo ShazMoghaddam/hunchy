@@ -1,0 +1,16 @@
+# Keeps the GitHub Actions this repo uses up to date. Dependabot opens a pull request each month, and the
+# Checks workflow tests every question before anything is merged.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: "Update"
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: "Update"
