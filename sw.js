@@ -1,8 +1,9 @@
 /* Hunchy's service worker: keeps a copy of the game so it works offline.
    Pages and questions: try the network first so updates arrive straight away, and fall back to the copy offline.
    Everything else (styles, script, fonts, icons): use the copy at once and refresh it in the background.
-   Change VERSION whenever the file list changes. */
-const VERSION = "hunchy-v1.1.0";
+   VERSION must match the latest version in CHANGELOG.md (a test checks). Changing it is what tells phones a new
+   version exists: the new worker installs, clears the old copy, and the page reloads itself onto it. */
+const VERSION = "hunchy-v1.1.1";
 const SHELL = [
   "./",
   "index.html",
@@ -19,7 +20,12 @@ const SHELL = [
 ];
 
 self.addEventListener("install", (event) => {
-  event.waitUntil(caches.open(VERSION).then((cache) => cache.addAll(SHELL)).then(() => self.skipWaiting()));
+  // cache: "reload" skips the browser's own short-term cache, so a new version never stores yesterday's files.
+  event.waitUntil(
+    caches.open(VERSION)
+      .then((cache) => cache.addAll(SHELL.map((url) => new Request(url, { cache: "reload" }))))
+      .then(() => self.skipWaiting()),
+  );
 });
 
 self.addEventListener("activate", (event) => {

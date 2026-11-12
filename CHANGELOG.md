@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.1.1 (2026-11-12)
+
+- **Updates arrive straight away.** When a new version of Hunchy is published, the page now reloads itself onto it
+  as soon as it's ready, instead of showing the old version for one more visit. If a round is being played, it waits
+  until the round is over, so no game is lost.
+- Hunchy now checks for a new version whenever it comes back to the screen, which helps on phones that keep it open
+  in the background.
+- A new version always downloads fresh files, never ones the browser kept from earlier.
+- A test now checks that the offline copy's version in `sw.js` matches the latest version in this changelog.
+
 ## v1.1.0 (2026-11-12)
 
 A new look, an 18th subject, and a game that works anywhere.

@@ -248,3 +248,11 @@ def test_public_counts_use_the_rounded_figure():
         text = (ROOT / path).read_text(encoding="utf-8")
         assert f"{rounded} questions" in text, (path, rounded)
         assert f"{len(QUESTIONS):,} questions" not in text, path
+
+
+def test_the_offline_version_matches_the_changelog():
+    """Bumping VERSION in sw.js is what makes phones fetch a new release, so it must move with every release."""
+    sw = (ROOT / "sw.js").read_text(encoding="utf-8")
+    changelog = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
+    latest = re.search(r"^## (v\d+\.\d+\.\d+)", changelog, re.M)[1]
+    assert f'const VERSION = "hunchy-{latest}";' in sw, f"set VERSION in sw.js to hunchy-{latest}"

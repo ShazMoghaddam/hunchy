@@ -64,8 +64,11 @@ The game is plain HTML, CSS and JavaScript: `index.html`, `assets/app.js` and `a
 `python3 -m http.server 8000` and open http://localhost:8000 to try your changes. Please check them on a phone-sized
 screen, with a keyboard, and in both the dark and light looks.
 
-If you add a file the game needs to load, add it to `SHELL` in `sw.js` too and change `VERSION`, so offline players
-get it. While testing, your browser may keep serving the old copy: a hard reload, or **Update on reload** in the
+If you add a file the game needs to load, add it to `SHELL` in `sw.js` too.
+
+Every release must change `VERSION` in `sw.js` to match the new version in `CHANGELOG.md` (a test checks this).
+That's what tells phones a new version exists; the page then reloads itself onto it, waiting until any round in
+progress is over. While testing, your browser may keep serving the old copy: a hard reload, or **Update on reload** in the
 browser's developer tools, fixes that.
 
 ## Pull requests
