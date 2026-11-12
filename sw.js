@@ -3,7 +3,7 @@
    Everything else (styles, script, fonts, icons): use the copy at once and refresh it in the background.
    VERSION must match the latest version in CHANGELOG.md (a test checks). Changing it is what tells phones a new
    version exists: the new worker installs, clears the old copy, and the page reloads itself onto it. */
-const VERSION = "hunchy-v1.1.1";
+const VERSION = "hunchy-v1.1.2";
 const SHELL = [
   "./",
   "index.html",

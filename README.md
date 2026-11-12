@@ -1,13 +1,13 @@
-![Hunchy: go with your hunch. A free family quiz](assets/banner.png)
+![Hunchy: go with your hunch. A free quiz for any get-together](assets/banner.png)
 
 # Hunchy
 
-**A free family quiz. Go with your hunch.**
+**A free quiz for any get-together. Go with your hunch.**
 
 **[Play Hunchy](https://shazmoghaddam.github.io/hunchy/)**
 
-Hunchy is a quick guessing game for the whole family. Everyone at the table can play the same round and have a fair
-chance: some questions are about Minecraft, Bluey and the Lionesses, some are about the Beatles and the Model T, and
+Hunchy is a quick guessing game for any get-together: friends round, a party, the pub or a night in. Everyone can play
+the same round and have a fair chance: some questions are about Minecraft, Bluey and the Lionesses, some are about the Beatles and the Model T, and
 plenty are things anyone might know, like which country is bigger or where IKEA comes from.
 
 It runs in any browser on a phone, tablet, laptop or desktop. No app to install, no account, no adverts.
@@ -26,7 +26,7 @@ After each answer you get a short "did you know" fact and a link to where the an
 
 | Way to play | What it is |
 |---|---|
-| **Today's ten** | Ten questions from ten subjects, the same for everyone that day. Play daily to build a streak, then share your score with the family |
+| **Today's ten** | Ten questions from ten subjects, the same for everyone that day. Play daily to build a streak, then share your score with your group chat |
 | **Quick round** | Ten questions from the subjects you pick |
 | **Three lives** | Keep going until you get three wrong |
 | **Hunch-off** | 2 to 6 players take turns on one phone. Highest score wins, with a joke break after every round of turns |
@@ -45,7 +45,7 @@ Messages or anywhere else; on a computer it's copied, ready to paste. Shared sco
 Every game ends with a joke, and Hunch-off has a joke break between rounds. You see the setup first, then tap for
 the punchline, and any joke can be shared. They come out at random and don't repeat until you've seen them all.
 
-Most of them are family jokes: puns, groan-worthy wordplay and gentle digs. Switch on **Grown-up jokes** in
+Most of them are for everyone: puns, groan-worthy wordplay and gentle digs. Switch on **Grown-up jokes** in
 Settings to add 25 cheekier ones, a little flirty or a little dark. They're off unless someone turns them on.
 
 ## 1,200+ questions in 18 subjects

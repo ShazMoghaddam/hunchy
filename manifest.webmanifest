@@ -2,7 +2,7 @@
   "id": "./",
   "name": "Hunchy",
   "short_name": "Hunchy",
-  "description": "A free family quiz. Go with your hunch.",
+  "description": "A free quiz for any get-together. Go with your hunch.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

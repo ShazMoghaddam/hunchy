@@ -65,7 +65,7 @@ or easy to get wrong were checked against a second source:
 - **Wrong answers that named people who don't exist**, such as made-up pairs of brothers, were replaced with real
   ones.
 - **Hugo Boss** was asked about as a maker of 'work clothes and uniforms'. Accurate, but it invites a dark
-  history that doesn't belong in a family quiz, so it now asks where the company was founded.
+  history that doesn't belong in a light-hearted quiz, so it now asks where the company was founded.
 - **Old Faithful** erupts roughly every 90 minutes, not every hour. Corrected.
 - **Religion** was taken out: a Diwali question became La Tomatina, and a camera-brand fact lost its religious detail.
 - **"Which language has the most native speakers?"** was already in the bank, so the Words & Language version was

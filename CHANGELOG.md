@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.1.2 (2026-11-12)
+
+- **A quiz for any get-together.** Hunchy's wording now fits every group: friends round, a party, the pub or a
+  night in. The new line, "A free quiz for any get-together", is used in the app, the page description and link
+  previews, the share messages, the README, the banner and the social preview.
+- Two jokes reworded to match, with no change to how they play.
+- A new test keeps the old wording from creeping back into the app and docs. The questions themselves are unchanged.
+
 ## v1.1.1 (2026-11-12)
 
 - **Updates arrive straight away.** When a new version of Hunchy is published, the page now reloads itself onto it
@@ -33,7 +41,7 @@ A new look, an 18th subject, and a game that works anywhere.
 
 ## v1.0.0 (2026-11-12)
 
-First release of Hunchy, a free family quiz. Go with your hunch.
+First release of Hunchy, a free quiz for any get-together. Go with your hunch.
 
 - **1,200 questions in 17 subjects**: Geography, Cities & Landmarks, History, Leaders & Famous People, Science,
   Space, Nature & Animals, Maths, Sport, Film & TV, Music, Art & Culture, Food & Drink, Inventions & Brands,

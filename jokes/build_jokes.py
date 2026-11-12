@@ -1,13 +1,13 @@
 """Writes data/jokes.json. Every joke is original to Hunchy.
 
-FAMILY jokes are for everyone. GROWN_UPS jokes are a bit cheekier, flirtier or darker, and only appear when the
+EVERYONE jokes are for everyone. GROWN_UPS jokes are a bit cheekier, flirtier or darker, and only appear when the
 Grown-up jokes switch is on. Run: python3 jokes/build_jokes.py
 """
 
 import json
 from pathlib import Path
 
-FAMILY = [
+EVERYONE = [
     ("Why did the higher-or-lower player bring a ladder?", "They had a feeling the answer was higher."),
     ("Why does the Eiffel Tower grow in summer?", "Too many croissants on holiday."),
     ("Why did the polar bear fail the penguin-spotting test?", "Wrong pole."),
@@ -38,7 +38,7 @@ FAMILY = [
     ("Why did the footballer bring string to the match?", "To tie the game."),
     ("Why did the sprinter get disqualified from quiz night?", "She kept answering before the gun."),
     ("Why are Le Mans drivers so tired?", "Twenty-four hours is a long time to go round in circles."),
-    ("Why did the Lamborghini stop at the farm?", "It wanted to visit the tractors and the bulls. Family is family."),
+    ("Why did the Lamborghini stop at the farm?", "It wanted to visit the tractors and the bulls. Old friends."),
     ("What do Mary Quant's miniskirt and the Mini car have in common?", "Not much leg room."),
     ("Why did the jeans go on holiday to Nîmes?", "To get back to their roots."),
     ("What did the wellington boot say to the puddle?", "You're no Waterloo."),
@@ -95,7 +95,7 @@ GROWN_UPS = [
     ("Why did the snowman's wife leave him?", "He was a total flake."),
     ("Why does Dracula always win the pub quiz?", "He was there for most of the answers."),
     ("I'd tell you a joke about the Mariana Trench.", "But it's far too deep for this time of night."),
-    ("Why is a Hunch-off like a family Christmas?", "Somebody always storms off before the scores are in."),
+    ("Why is a Hunch-off like Christmas dinner?", "Somebody always storms off before the scores are in."),
     ("I tried speed dating at the Tour de France.", "Everyone just rode straight past."),
     ("Are you The Kiss by Klimt?", "Because I could stare at you for hours and still not understand what's going on."),
     ("Are you Mount Damavand?", "Because you're hot, and I'm not convinced you're as dormant as you look."),
@@ -115,11 +115,11 @@ GROWN_UPS = [
 
 
 def main() -> None:
-    jokes = [{"id": f"joke-{i:03d}", "setup": s, "punchline": p, "grownUp": False} for i, (s, p) in enumerate(FAMILY, 1)]
-    jokes += [{"id": f"joke-{i:03d}", "setup": s, "punchline": p, "grownUp": True} for i, (s, p) in enumerate(GROWN_UPS, len(FAMILY) + 1)]
+    jokes = [{"id": f"joke-{i:03d}", "setup": s, "punchline": p, "grownUp": False} for i, (s, p) in enumerate(EVERYONE, 1)]
+    jokes += [{"id": f"joke-{i:03d}", "setup": s, "punchline": p, "grownUp": True} for i, (s, p) in enumerate(GROWN_UPS, len(EVERYONE) + 1)]
     out = Path(__file__).resolve().parent.parent / "data" / "jokes.json"
     out.write_text(json.dumps({"jokes": jokes}, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    print(f"Saved {len(jokes)} jokes ({len(FAMILY)} for everyone, {len(GROWN_UPS)} grown-up) to {out.name}")
+    print(f"Saved {len(jokes)} jokes ({len(EVERYONE)} for everyone, {len(GROWN_UPS)} grown-up) to {out.name}")
 
 
 if __name__ == "__main__":

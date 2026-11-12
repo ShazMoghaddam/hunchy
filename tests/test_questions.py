@@ -152,7 +152,7 @@ JOKES = json.loads((ROOT / "data" / "jokes.json").read_text(encoding="utf-8"))["
 
 
 def test_the_jokes_file_matches_the_source():
-    expected = [*build_jokes.FAMILY, *build_jokes.GROWN_UPS]
+    expected = [*build_jokes.EVERYONE, *build_jokes.GROWN_UPS]
     assert [(j["setup"], j["punchline"]) for j in JOKES] == expected
 
 
@@ -169,13 +169,22 @@ def test_jokes_are_clean_text():
             assert text.strip() and "—" not in text and not emoji.search(text), j["id"]
 
 
-# No ages anywhere: Hunchy is a family quiz, full stop ------------------------------------------------------
+# No ages and no 'family' wording anywhere: Hunchy is a quiz for any get-together ------------------------------------------------------
 
 @pytest.mark.parametrize("path", ["README.md", "CHANGELOG.md", "CONTRIBUTING.md", "index.html", "manifest.webmanifest",
                                   "assets/app.js", "questions/curated/__init__.py"])
 def test_no_age_ranges(path):
     text = (ROOT / path).read_text(encoding="utf-8")
     assert not re.search(r"\bages? \d|\d+ to 80|year-old|younger players", text, re.I), path
+
+
+@pytest.mark.parametrize("path", ["README.md", "CHANGELOG.md", "CONTRIBUTING.md", "SECURITY.md", "questions/CHECKS.md",
+                                  "index.html", "manifest.webmanifest", "assets/app.js", "assets/styles.css", "sw.js",
+                                  "data/jokes.json", "jokes/build_jokes.py", "questions/curated/__init__.py"])
+def test_hunchy_is_for_any_get_together(path):
+    """Hunchy is described as a quiz for any get-together, never as a family game. (CSS's font-family is fine.)"""
+    text = (ROOT / path).read_text(encoding="utf-8")
+    assert not re.search(r"(?<![-\w])famil", text, re.I), path
 
 
 # The page itself -------------------------------------------------------------------------------------
