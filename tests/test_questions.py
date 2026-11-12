@@ -29,8 +29,8 @@ def test_the_published_file_matches_the_source():
     assert QUESTIONS == all_generated() + curated()
 
 
-def test_there_are_1200_questions_with_no_problems():
-    assert len(QUESTIONS) == BANK["count"] == 1200
+def test_there_are_1260_questions_with_no_problems():
+    assert len(QUESTIONS) == BANK["count"] == 1260
     assert check(QUESTIONS) == []
 
 
@@ -180,7 +180,7 @@ def test_no_age_ranges(path):
 
 # The page itself -------------------------------------------------------------------------------------
 
-@pytest.mark.parametrize("path", ["index.html", "assets/app.js", "assets/styles.css", "manifest.webmanifest"])
+@pytest.mark.parametrize("path", ["index.html", "assets/app.js", "assets/styles.css", "manifest.webmanifest", "sw.js"])
 def test_no_em_dashes_in_the_game(path):
     assert "—" not in (ROOT / path).read_text(encoding="utf-8")
 
@@ -197,3 +197,54 @@ def test_files_the_page_needs_exist():
     html = (ROOT / "index.html").read_text(encoding="utf-8")
     for ref in re.findall(r'(?:href|src)="(?!https?:|#|mailto:)([^"]+)"', html):
         assert (ROOT / ref).exists(), ref
+
+
+def test_the_offline_copy_lists_real_files():
+    """sw.js keeps these files for offline play. A missing one would stop the service worker installing."""
+    sw = (ROOT / "sw.js").read_text(encoding="utf-8")
+    shell = re.search(r"const SHELL = \[(.*?)\];", sw, re.S)[1]
+    for ref in re.findall(r'"([^"]+)"', shell):
+        assert ref == "./" or (ROOT / ref).exists(), ref
+
+
+def test_the_manifest_icons_exist():
+    manifest = json.loads((ROOT / "manifest.webmanifest").read_text(encoding="utf-8"))
+    for item in manifest["icons"]:
+        assert (ROOT / item["src"]).exists(), item["src"]
+
+
+@pytest.mark.parametrize("path", ["index.html", "assets/app.js", "assets/styles.css", "sw.js"])
+def test_no_emojis_in_the_game(path):
+    """Every symbol in Hunchy is a drawn SVG icon, never an emoji."""
+    emoji = re.compile("[\U0001F300-\U0001FAFF☀-➿⭐️]")
+    assert not emoji.search((ROOT / path).read_text(encoding="utf-8")), path
+
+
+def test_subject_colours_are_readable():
+    """Icons and labels sit on the subject colour: navy on the dark look, white on the light look. Both need 4.5:1."""
+    css = (ROOT / "assets" / "styles.css").read_text(encoding="utf-8")
+
+    def lum(h):
+        c = [int(h[i:i + 2], 16) / 255 for i in (1, 3, 5)]
+        c = [x / 12.92 if x <= 0.04045 else ((x + 0.055) / 1.055) ** 2.4 for x in c]
+        return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]
+
+    def ratio(a, b):
+        hi, lo = sorted([lum(a), lum(b)], reverse=True)
+        return (hi + 0.05) / (lo + 0.05)
+
+    for cat in CATEGORIES:
+        dark = re.search(rf'^\[data-cat="{cat}"\] {{ --c: (#[0-9A-F]{{6}}); }}', css, re.M)[1]
+        light = re.search(rf'^\[data-theme="light"\] \[data-cat="{cat}"\] {{ --c: (#[0-9A-F]{{6}}); }}', css, re.M)[1]
+        assert ratio(dark, "#0D1230") >= 4.5, (cat, dark)
+        assert ratio(light, "#FFFFFF") >= 4.5, (cat, light)
+
+
+def test_public_counts_use_the_rounded_figure():
+    """The README and page say '1,200+', rounded down to the hundred, so they stay true as questions are added.
+    When the bank passes the next hundred, this test fails as a reminder to update them (and the banner)."""
+    rounded = f"{len(QUESTIONS) // 100 * 100:,}+"
+    for path in ["README.md", "index.html"]:
+        text = (ROOT / path).read_text(encoding="utf-8")
+        assert f"{rounded} questions" in text, (path, rounded)
+        assert f"{len(QUESTIONS):,} questions" not in text, path

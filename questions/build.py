@@ -22,7 +22,7 @@ from questions.generated import all_generated  # noqa: E402
 
 OUT = ROOT / "data" / "questions.json"
 CURATED = ["history", "people", "places", "science", "sport", "screen", "culture",
-           "sport2", "vehicles", "brands", "art2", "fashion_food_cartoons", "world2"]
+           "sport2", "vehicles", "brands", "art2", "fashion_food_cartoons", "world2", "words"]
 
 CATEGORIES = {
     "geography": "Geography", "landmarks": "Cities & Landmarks", "history": "History",
@@ -30,6 +30,7 @@ CATEGORIES = {
     "maths": "Maths", "sport": "Sport", "film-tv": "Film & TV", "music": "Music", "art": "Art & Culture",
     "food": "Food & Drink", "inventions": "Inventions & Brands",
     "cars": "Cars & Motorbikes", "fashion": "Fashion", "cartoons": "Cartoons & Animation",
+    "words": "Words & Language",
 }
 TYPES = {"yes-no", "higher-lower", "choice"}
 ERAS = {"timeless", "classic", "modern"}

@@ -1,5 +1,26 @@
 # Changelog
 
+## v1.1.0 (2026-11-12)
+
+A new look, an 18th subject, and a game that works anywhere.
+
+- **Midnight pop.** A new design: deep navy, a glowing daily card, a bright colour for every subject, and the
+  Urbanist typeface throughout. Every icon is a clean outline drawing, including a redrawn streak flame.
+- **A light look** for bright rooms and sunshine, chosen in Settings. Dark stays the default.
+- **Words & Language**, the 18th subject: 60 questions on where words come from, languages of the world, alphabets
+  and wordplay. That takes Hunchy past 1,200 questions, and the subject grid now fills its rows on phones and computers.
+- **Plays offline.** Once Hunchy has loaded, it works with no signal, and phones can add it to the home screen.
+- **No repeats until you've seen everything.** The game now remembers every question you've answered, not just the
+  last 500.
+- **Sound and buzz.** A soft sound for right and wrong answers and a little buzz on phones that support it, with a
+  switch in Settings and a quick mute while you play.
+- **Your stats**: questions answered, your hit rate, games finished, longest daily streak, best run at three lives,
+  perfect tens, and your best subjects.
+- **Settings** in one place on the home screen: easier questions, grown-up jokes, sound and buzz, and the look.
+- **A proper footer**, in the two-tone style of [shazmoghaddam.github.io](https://shazmoghaddam.github.io/), with how
+  to play, your stats, the live question count and the credits.
+- New app icons, README banner and social preview to match.
+
 ## v1.0.0 (2026-11-12)
 
 First release of Hunchy, a free family quiz. Go with your hunch.

@@ -29,7 +29,7 @@ jobs:
         run: git diff --exit-code -- data/jokes.json || (echo "Run python jokes/build_jokes.py and commit data/jokes.json" && exit 1)
       - name: Check every question
         run: pytest -q
-      - uses: actions/setup-node@v7
+      - uses: actions/setup-node@v6
         with:
           node-version: "22"
       - name: The game's JavaScript has no syntax errors

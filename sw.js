@@ -1,0 +1,61 @@
+/* Hunchy's service worker: keeps a copy of the game so it works offline.
+   Pages and questions: try the network first so updates arrive straight away, and fall back to the copy offline.
+   Everything else (styles, script, fonts, icons): use the copy at once and refresh it in the background.
+   Change VERSION whenever the file list changes. */
+const VERSION = "hunchy-v1.1.0";
+const SHELL = [
+  "./",
+  "index.html",
+  "manifest.webmanifest",
+  "assets/styles.css",
+  "assets/app.js",
+  "assets/fonts/urbanist-latin-wght-normal.woff2",
+  "assets/fonts/urbanist-latin-ext-wght-normal.woff2",
+  "assets/fonts/dm-mono-latin-500-normal.woff2",
+  "assets/icons/favicon.svg",
+  "assets/icons/icon-192.png",
+  "data/questions.json",
+  "data/jokes.json",
+];
+
+self.addEventListener("install", (event) => {
+  event.waitUntil(caches.open(VERSION).then((cache) => cache.addAll(SHELL)).then(() => self.skipWaiting()));
+});
+
+self.addEventListener("activate", (event) => {
+  event.waitUntil(
+    caches.keys()
+      .then((keys) => Promise.all(keys.filter((k) => k !== VERSION).map((k) => caches.delete(k))))
+      .then(() => self.clients.claim()),
+  );
+});
+
+self.addEventListener("fetch", (event) => {
+  const req = event.request;
+  const url = new URL(req.url);
+  if (req.method !== "GET" || url.origin !== self.location.origin) return; // leave other sites alone
+
+  const networkFirst = req.mode === "navigate" || url.pathname.endsWith(".json");
+  const key = req.mode === "navigate" ? "index.html" : url.pathname.endsWith(".json") ? new Request(url.pathname) : req;
+
+  if (networkFirst) {
+    event.respondWith(
+      fetch(req)
+        .then((res) => {
+          if (res.ok) { const copy = res.clone(); caches.open(VERSION).then((c) => c.put(key, copy)); }
+          return res;
+        })
+        .catch(() => caches.match(key, { ignoreSearch: true })),
+    );
+    return;
+  }
+
+  event.respondWith(
+    caches.match(req, { ignoreSearch: true }).then((cached) => {
+      const update = fetch(req)
+        .then((res) => { if (res.ok) { const copy = res.clone(); caches.open(VERSION).then((c) => c.put(req, copy)); } return res; })
+        .catch(() => cached);
+      return cached || update;
+    }),
+  );
+});

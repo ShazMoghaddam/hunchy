@@ -17,6 +17,8 @@
   let jokes = [];           // loaded from data/jokes.json; the game still works if they don't load
   let grownUps = false;     // grown-up jokes are off unless someone switches them on
   let shownJoke = null;     // the joke on screen, for sharing
+  let sound = true;         // little sounds and a buzz on phones; one switch turns both off
+  let theme = "dark";       // "dark" (the default) or "light"
 
   // Storage. Browsers can refuse it (private windows, blocked cookies), so every call is guarded and the game
   // works without it; it just won't remember streaks.
@@ -49,6 +51,8 @@
   const pickOne = (list, rnd = Math.random) => list[Math.floor(rnd() * list.length)];
 
   const allowed = (q, who) => who === "everyone" || q.difficulty <= 2;
+  // "1,200+" rather than "1,260": rounds down to the hundred, so the wording stays true as questions are added.
+  const roundedCount = () => `${(Math.floor(bank.questions.length / 100) * 100).toLocaleString("en-GB")}+`;
   const plural = (n, word) => `${n} ${word}${n === 1 ? "" : "s"}`;
 
   // Choosing questions ------------------------------------------------------------------------
@@ -101,7 +105,65 @@
 
   function markSeen(id) {
     const seen = store.get("seen", []);
-    if (!seen.includes(id)) { seen.push(id); store.set("seen", seen.slice(-500)); }
+    // Every question is remembered (about 9 KB for the whole bank), so nothing repeats until the pile runs out.
+    if (!seen.includes(id)) { seen.push(id); store.set("seen", seen); }
+  }
+
+  // Stats: kept in this browser only, like everything else.
+  const emptyStats = () => ({ answered: 0, right: 0, games: 0, perfect: 0, cats: {} });
+  function getStats() {
+    const st = store.get("stats", null);
+    return st && typeof st === "object" && st.cats ? { ...emptyStats(), ...st } : emptyStats();
+  }
+  function recordAnswer(q, right) {
+    const st = getStats();
+    st.answered++; if (right) st.right++;
+    const c = st.cats[q.category] || [0, 0];
+    st.cats[q.category] = [c[0] + 1, c[1] + (right ? 1 : 0)];
+    store.set("stats", st);
+  }
+  function recordGame(perfect) {
+    const st = getStats();
+    st.games++; if (perfect) st.perfect++;
+    store.set("stats", st);
+  }
+  function longestStreak() {
+    const days = store.get("days", []).slice().sort();
+    let best = 0, run = 0, prev = null;
+    for (const d of days) {
+      run = prev && dayBefore(d) === prev ? run + 1 : 1;
+      best = Math.max(best, run); prev = d;
+    }
+    return best;
+  }
+
+  // Sound and buzz. Tones are made on the fly with Web Audio, so there are no sound files to download.
+  let audio = null;
+  function tone(freq, start, length, type = "sine", volume = 0.07) {
+    const t = audio.currentTime + start;
+    const osc = audio.createOscillator(); const gain = audio.createGain();
+    osc.type = type; osc.frequency.setValueAtTime(freq, t);
+    gain.gain.setValueAtTime(0.0001, t);
+    gain.gain.exponentialRampToValueAtTime(volume, t + 0.015);
+    gain.gain.exponentialRampToValueAtTime(0.0001, t + length);
+    osc.connect(gain).connect(audio.destination);
+    osc.start(t); osc.stop(t + length + 0.02);
+  }
+  function play(kind) {
+    if (!sound) return;
+    try {
+      audio = audio || new (window.AudioContext || window.webkitAudioContext)();
+      if (audio.state === "suspended") audio.resume();
+      if (kind === "right") { tone(784, 0, 0.12); tone(1175, 0.08, 0.18); }
+      else if (kind === "wrong") { tone(220, 0, 0.22, "triangle", 0.09); tone(175, 0.1, 0.26, "triangle", 0.08); }
+      else if (kind === "done") { tone(659, 0, 0.14); tone(784, 0.11, 0.14); tone(1047, 0.22, 0.3); }
+    } catch { /* no audio on this device */ }
+    try { navigator.vibrate?.(kind === "wrong" ? [35, 45, 35] : kind === "right" ? 15 : [15, 40, 15, 40, 30]); } catch { /* no buzz */ }
+  }
+
+  function applyTheme() {
+    document.documentElement.dataset.theme = theme;
+    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", theme === "light" ? "#F4F3FA" : "#0D1230");
   }
 
   // Screens ---------------------------------------------------------------------------------
@@ -114,9 +176,10 @@
   const logo = `
     <a class="logo" href="#" data-go="home" aria-label="Hunchy home">
       <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
-        <rect x="2" y="3" width="36" height="34" rx="11" fill="#6A4CFF" stroke="#1D1A33" stroke-width="2.5"/>
-        <path d="M13 17l5.5-5.5L24 17" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M16 23l5.5 5.5L27 23" fill="none" stroke="#FFB27A" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <defs><linearGradient id="logo-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7C5CFF"/><stop offset="1" stop-color="#B44CFF"/></linearGradient></defs>
+        <rect x="1" y="1" width="38" height="38" rx="12" fill="url(#logo-g)"/>
+        <path d="M13 16.5l6.5-6.5 6.5 6.5" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M14 23.5l6.5 6.5 6.5-6.5" fill="none" stroke="#FFB27A" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
       <span class="logo-word">hunchy</span>
     </a>`;
@@ -149,16 +212,14 @@
 
     render(`
       <div class="wrap">
-        <header class="top">${logo}${streakChip()}</header>
+        <header class="top">${logo}<div class="right">${streakChip()}</div></header>
 
         <section class="card today" aria-labelledby="today-title">
           <svg class="fan" viewBox="0 0 150 150" aria-hidden="true">
-            <g stroke="#1D1A33" stroke-width="2.5">
-              <rect x="44" y="20" width="62" height="86" rx="12" fill="#9FE6CF" transform="rotate(-16 75 63)"/>
-              <rect x="44" y="20" width="62" height="86" rx="12" fill="#FFE27A" transform="rotate(-4 75 63)"/>
-              <rect x="44" y="20" width="62" height="86" rx="12" fill="#FFB4C2" transform="rotate(9 75 63)"/>
-            </g>
-            <text x="83" y="77" font-family="Fredoka, sans-serif" font-weight="700" font-size="40" fill="#1D1A33" text-anchor="middle" transform="rotate(9 75 63)">?</text>
+            <rect x="44" y="20" width="62" height="86" rx="13" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.45)" stroke-width="2" transform="rotate(-16 75 63)"/>
+            <rect x="44" y="20" width="62" height="86" rx="13" fill="#C8F542" transform="rotate(-4 75 63)"/>
+            <rect x="44" y="20" width="62" height="86" rx="13" fill="#fff" transform="rotate(9 75 63)"/>
+            <text x="83" y="78" font-family="Urbanist, sans-serif" font-weight="900" font-size="44" fill="#6A3DF0" text-anchor="middle" transform="rotate(9 75 63)">?</text>
           </svg>
           <p class="today-date">${icon("calendar")} ${esc(niceDate(key))}</p>
           <h1 id="today-title">Today's ten</h1>
@@ -168,32 +229,104 @@
                  : `<button class="piece primary" data-go="daily">Play today's ten</button>`}
         </section>
 
-        <div class="audience" role="group" aria-label="Which questions?">
-          <button aria-pressed="${audience === "everyone"}" data-audience="everyone">All questions</button>
-          <button aria-pressed="${audience === "easier"}" data-audience="easier">Easier questions</button>
-        </div>
-        <p class="audience-note">${audience === "easier" ? "Leaves out the hardest questions in quick rounds, three lives and Hunch-off." : "Everything, from easy to properly tricky."}</p>
-
-        <button class="switch" role="switch" aria-checked="${grownUps}" data-grownups>
-          <span class="switch-text"><strong>Grown-up jokes</strong><small>${grownUps ? "On. Cheekier jokes are in the mix." : "Off. Every joke is fine for the whole family."}</small></span>
-          <span class="switch-track" aria-hidden="true"><span class="switch-thumb"></span></span>
-        </button>
-
         <h2 class="section">More ways to play</h2>
         <div class="modes">
           <button class="piece mode quick" data-go="quick-setup"><span class="badge">${icon("bolt")}</span><span class="text">Quick round<small>Ten questions from the subjects you choose</small></span></button>
           <button class="piece mode lives" data-go="lives"><span class="badge">${icon("heart")}</span><span class="text">Three lives<small>Keep going until you've got three wrong. Best: ${store.get("best-lives", 0)}</small></span></button>
           <button class="piece mode hunchoff" data-go="hunchoff-setup"><span class="badge">${icon("family")}</span><span class="text">Hunch-off<small>Take turns on one phone</small></span></button>
+          <button class="piece mode stats" data-go="stats"><span class="badge">${icon("chart")}</span><span class="text">Your stats<small>Best subjects, streaks and scores</small></span></button>
         </div>
 
         <h2 class="section">Pick a subject</h2>
         <div class="tiles">${tiles}</div>
 
-        <footer class="foot">
-          <p><a href="#" data-go="howto">How to play, and how the answers are checked</a></p>
-          <p>${bank.questions.length} questions, each with a source you can check. Made by <a href="https://shazmoghaddam.github.io/">Shaz Moghaddam</a> in London. <a href="${REPO}">Code on GitHub</a>.</p>
-        </footer>
+        <h2 class="section" id="settings-title">Settings</h2>
+        <section class="card settings" aria-labelledby="settings-title">
+          <div class="setting">
+            <span class="what" id="aud-label"><strong>Questions</strong><small>${audience === "easier" ? "Leaves out the hardest ones in quick rounds, three lives and Hunch-off." : "Everything, from easy to properly tricky."}</small></span>
+            <div class="segmented" role="group" aria-labelledby="aud-label">
+              <button aria-pressed="${audience === "everyone"}" data-audience="everyone">All</button>
+              <button aria-pressed="${audience === "easier"}" data-audience="easier">Easier</button>
+            </div>
+          </div>
+          <div class="setting">
+            <span class="what" id="gu-label"><strong>Grown-up jokes</strong><small>${grownUps ? "On. Cheekier jokes are in the mix." : "Off. Every joke is fine for the whole family."}</small></span>
+            <button class="switch" role="switch" aria-checked="${grownUps}" aria-labelledby="gu-label" data-grownups><span class="switch-track" aria-hidden="true"><span class="switch-thumb"></span></span></button>
+          </div>
+          <div class="setting">
+            <span class="what" id="snd-label"><strong>Sound and buzz</strong><small>A little sound for each answer, and a buzz on phones that can.</small></span>
+            <button class="switch" role="switch" aria-checked="${sound}" aria-labelledby="snd-label" data-sound><span class="switch-track" aria-hidden="true"><span class="switch-thumb"></span></span></button>
+          </div>
+          <div class="setting">
+            <span class="what" id="theme-label"><strong>Look</strong><small>${theme === "light" ? "Light, for bright rooms and sunshine." : "Dark, easy on the eyes after tea."}</small></span>
+            <div class="segmented" role="group" aria-labelledby="theme-label">
+              <button aria-pressed="${theme === "dark"}" data-theme-pick="dark">Dark</button>
+              <button aria-pressed="${theme === "light"}" data-theme-pick="light">Light</button>
+            </div>
+          </div>
+        </section>
+
+        ${siteFoot()}
       </div>`, false);
+  }
+
+  // The footer card: two tones split on the diagonal, like shazmoghaddam.github.io. The second layer is a visual
+  // copy, hidden from screen readers and the keyboard, so the text can change colour where the tones meet.
+  function siteFoot() {
+    const inner = (hidden) => {
+      const tab = hidden ? ` tabindex="-1"` : "";
+      return `
+        <ul class="ft-links">
+          <li><a href="#" data-go="howto"${tab}>How to play, and how the answers are checked</a></li>
+          <li><a href="#" data-go="stats"${tab}>Your stats</a></li>
+        </ul>
+        <p class="ft-count">${roundedCount()} questions in ${Object.keys(bank.categories).length} subjects, each with a source you can check. Works offline once it's loaded.</p>
+        <div class="ft-rule" aria-hidden="true"></div>
+        <div class="ft-sign">
+          <p class="ft-copy"><span aria-hidden="true">&lt;&lt;&lt;</span><span class="ft-text">Made by <a href="https://shazmoghaddam.github.io/"${tab}>Shaz Moghaddam</a> · London</span><span aria-hidden="true">&gt;&gt;&gt;</span></p>
+          <a class="ft-code" href="${REPO}"${tab}>Code on GitHub</a>
+        </div>`;
+    };
+    return `
+      <footer class="site-foot">
+        <div class="ft-layer ft-layer--b">${inner(false)}</div>
+        <div class="ft-layer ft-layer--a" aria-hidden="true">${inner(true)}</div>
+      </footer>`;
+  }
+
+  function statsScreen() {
+    const st = getStats();
+    const pct = st.answered ? Math.round((st.right / st.answered) * 100) : 0;
+    const subjects = Object.entries(st.cats)
+      .filter(([cat, [n]]) => bank.categories[cat] && n >= 3)
+      .map(([cat, [n, r]]) => ({ cat, n, r, p: Math.round((r / n) * 100) }))
+      .sort((a, b) => b.p - a.p || b.n - a.n);
+    const tile = (value, label) => `<div class="stat"><b>${value}</b><span>${label}</span></div>`;
+    const bars = subjects.map((x) => `
+      <li data-cat="${x.cat}"><span class="disc">${icon(x.cat)}</span><span class="name">${esc(bank.categories[x.cat])}</span>
+        <span class="pct">${x.p}%</span><span class="track" role="img" aria-label="${x.r} right out of ${x.n}"><span class="fill" style="width:${x.p}%"></span></span></li>`).join("");
+    render(`
+      <div class="wrap">
+        <header class="top">${logo}<div class="right"><button class="icon-btn" data-go="home" aria-label="Back to home">${icon("close")}</button></div></header>
+        <section class="card panel">
+          <h1>Your stats</h1>
+          <p>Saved only in this browser.</p>
+          <div class="stat-grid">
+            ${tile(st.answered.toLocaleString("en-GB"), st.answered === 1 ? "question answered" : "questions answered")}
+            ${tile(pct + "%", "right answers")}
+            ${tile(st.games.toLocaleString("en-GB"), st.games === 1 ? "game finished" : "games finished")}
+            ${tile(plural(longestStreak(), "day"), "longest daily streak")}
+            ${tile(store.get("best-lives", 0), "best at three lives")}
+            ${tile(st.perfect, st.perfect === 1 ? "perfect ten" : "perfect tens")}
+          </div>
+          <h2 class="section">Best subjects</h2>
+          ${bars ? `<ul class="subject-bars">${bars}</ul>` : `<p class="empty">Answer a few questions in any subject and they'll show up here, best first.</p>`}
+          <div class="actions two">
+            <button class="piece quiet" data-go="home">Home</button>
+            <button class="piece quiet" data-reset-stats>Reset my stats</button>
+          </div>
+        </section>
+      </div>`);
   }
 
   function howto() {
@@ -216,9 +349,11 @@
             <li><strong>Three lives</strong> keeps going until you get three wrong.</li>
             <li><strong>Hunch-off</strong> lets 2 to 6 people take turns on one phone or tablet. The highest score wins.</li>
           </ul>
-          <p>Choose <strong>Easier questions</strong> on the home screen to leave out the hardest ones.</p>
+          <p>In <strong>Settings</strong> on the home screen you can choose easier questions, switch sound and buzz on or off, and pick a dark or light look. <strong>Your stats</strong> shows your best subjects and longest streak.</p>
+          <h2>Play anywhere</h2>
+          <p>Once Hunchy has loaded, it works without an internet connection. On a phone, use your browser's <em>Add to Home Screen</em> to keep it with your apps.</p>
           <h2>Jokes</h2>
-          <p>Every game ends with a joke, and Hunch-off has a joke break after each round of turns. Tap for the punchline, then share it if it made you laugh. Grown-up jokes are a bit cheekier, and only turn up if you switch them on from the home screen.</p>
+          <p>Every game ends with a joke, and Hunch-off has a joke break after each round of turns. Tap for the punchline, then share it if it made you laugh. Grown-up jokes are a bit cheekier, and only turn up if you switch them on in Settings.</p>
           <p>On a keyboard, press 1 to 4 to answer and Enter for the next question.</p>
           <h2>Can I trust the answers?</h2>
           <p>Every question has a source, shown after you answer. Maths answers are worked out by the game's own code. Country and science facts come from two separate datasets and are only used where both agree. Everything else was checked against a published source, and anything that can change, like a sports record, says when it was last checked.</p>
@@ -253,7 +388,7 @@
       }));
       app.querySelector("[data-start]").addEventListener("click", () => {
         const pool = bank.questions.filter((q) => (!chosen.size || chosen.has(q.category)) && allowed(q, audience));
-        if (pool.length < 5) return draw("There aren't enough easier questions in that subject yet. Add another subject, or switch to All questions.");
+        if (pool.length < 5) return draw("There aren't enough easier questions in that subject yet. Add another subject, or set Questions to All in Settings on the home screen.");
         start({ mode: "quick", questions: fresh(pool, ROUND), label: chosen.size === 1 ? bank.categories[[...chosen][0]] : "Quick round" });
       });
     };
@@ -285,7 +420,7 @@
             <div class="segmented" role="group" aria-labelledby="each-label">
               ${[3, 5, 8].map((n) => `<button data-each="${n}" aria-pressed="${each === n}">${n}</button>`).join("")}
             </div>
-            <p class="hint">${audience === "easier" ? "Using easier questions. Change this on the home screen." : "Using all questions. Choose Easier questions on the home screen to leave out the hardest ones."}</p>
+            <p class="hint">${audience === "easier" ? "Using easier questions. Change this in Settings on the home screen." : "Using all questions. Choose Easier in Settings on the home screen to leave out the hardest ones."}</p>
             ${err ? `<p class="error" role="alert">${esc(err)}</p>` : ""}
             <div class="actions"><button class="piece primary" data-start>Start the game</button></div>
           </section>
@@ -344,7 +479,7 @@
     let top;
     if (game.mode === "lives") {
       top = `<div class="lives" aria-label="${game.lives} lives left">${Array.from({ length: LIVES }, (_, i) => icon("heart", i < game.lives ? "" : "lost")).join("")}</div>
-             <span class="score-pill" style="margin-left:auto" aria-label="Score ${game.score}">${game.score}</span>`;
+             <span class="score-pill" aria-label="Score ${game.score}">${game.score}</span>`;
     } else {
       const total = game.questions.length;
       const dots = Array.from({ length: total }, (_, i) => {
@@ -367,6 +502,7 @@
         <div class="bar">
           <button class="icon-btn" data-quit aria-label="Stop and go home">${icon("close")}</button>
           ${top}
+          <button class="icon-btn" data-sound-quick aria-pressed="${sound}" aria-label="Sound and buzz">${icon(sound ? "sound" : "mute")}</button>
         </div>
         ${game.mode === "hunchoff" ? `<p class="turn-name">${esc(player().name)}'s question</p>` : ""}
         <article class="card question" data-cat="${q.category}">
@@ -385,6 +521,8 @@
     const q = game.questions[game.index];
     const right = i === q.answer;
     markSeen(q.id);
+    recordAnswer(q, right);
+    play(right ? "right" : "wrong");
     if (game.mode !== "lives") game.results[game.index] = right;
     if (right) { game.score++; if (game.mode === "hunchoff") player().score++; }
     else if (game.mode === "lives") game.lives--;
@@ -440,6 +578,9 @@
 
   function finish() {
     const key = todayKey();
+    play("done");
+    if (game.mode !== "lives") recordGame(game.mode !== "hunchoff" && game.score === game.questions.length && game.questions.length === ROUND);
+    else recordGame(false);
     let extra = "";
     if (game.mode === "daily") {
       const daily = store.get("daily", {});
@@ -614,7 +755,7 @@
     const go = e.target.closest("[data-go]");
     const aud = e.target.closest("[data-audience]");
     const quit = e.target.closest("[data-quit]");
-    if (aud) { audience = aud.dataset.audience; store.set("audience", audience); home(); return; }
+    if (aud) { audience = aud.dataset.audience; store.set("audience", audience); home(); app.querySelector(`[data-audience="${audience}"]`)?.focus({ preventScroll: true }); return; }
     if (e.target.closest("[data-grownups]")) {
       grownUps = !grownUps; store.set("grown-ups", grownUps); home();
       app.querySelector("[data-grownups]")?.focus({ preventScroll: true });
@@ -626,6 +767,33 @@
       return share(`${shownJoke.setup}\n${shownJoke.punchline}\n\nFrom Hunchy, a free family quiz: ${SITE}`, "Joke copied. Go and make someone groan.");
     }
     if (e.target.closest("[data-joke-next]")) return nextJoke();
+    if (e.target.closest("[data-sound]")) {
+      sound = !sound; store.set("sound", sound); home();
+      app.querySelector("[data-sound]")?.focus({ preventScroll: true });
+      if (sound) play("right");
+      return;
+    }
+    const soundQuick = e.target.closest("[data-sound-quick]");
+    if (soundQuick) {
+      sound = !sound; store.set("sound", sound);
+      soundQuick.setAttribute("aria-pressed", sound);
+      soundQuick.innerHTML = icon(sound ? "sound" : "mute");
+      toast(sound ? "Sound and buzz on." : "Sound and buzz off.");
+      return;
+    }
+    const pickTheme = e.target.closest("[data-theme-pick]");
+    if (pickTheme) {
+      theme = pickTheme.dataset.themePick; store.set("theme", theme); applyTheme(); home();
+      app.querySelector(`[data-theme-pick="${theme}"]`)?.focus({ preventScroll: true });
+      return;
+    }
+    if (e.target.closest("[data-reset-stats]")) {
+      if (Date.now() - resetArmed < 3000) {
+        store.set("stats", emptyStats()); store.set("days", []); store.set("best-lives", 0);
+        toast("Stats cleared."); statsScreen();
+      } else { resetArmed = Date.now(); toast("Tap Reset again to clear your stats and streak."); }
+      return;
+    }
     if (e.target.closest("[data-share-result]") && shareResult) return shareResult();
     if (quit) { if (!game || game.index === 0 || confirmQuit()) home(); return; }
     if (!go) return;
@@ -639,10 +807,12 @@
     else if (where === "lives") startLives();
     else if (where === "hunchoff-setup") hunchoffSetup();
     else if (where === "share-daily") shareDaily();
+    else if (where === "stats") statsScreen();
   });
 
   // A gentle check, without the browser's blocking pop-up: tapping the cross twice within three seconds quits.
   let quitArmed = 0;
+  let resetArmed = 0;
   function confirmQuit() {
     if (Date.now() - quitArmed < 3000) return true;
     quitArmed = Date.now();
@@ -662,6 +832,13 @@
     // "younger" was the old name for easier questions, so anyone who chose it keeps their setting.
     audience = ["easier", "younger"].includes(store.get("audience", "everyone")) ? "easier" : "everyone";
     grownUps = store.get("grown-ups", false) === true;
+    sound = store.get("sound", true) !== false;
+    theme = store.get("theme", "dark") === "light" ? "light" : "dark";
+    applyTheme();
+    // Offline play: the service worker keeps a copy of the game and its questions. Only on https or localhost.
+    if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
+      navigator.serviceWorker.register("sw.js").catch(() => { /* still playable online */ });
+    }
     const loadJokes = fetch("data/jokes.json", { cache: "no-cache" })
       .then((r) => (r.ok ? r.json() : { jokes: [] })).then((d) => { jokes = Array.isArray(d.jokes) ? d.jokes : []; })
       .catch(() => { jokes = []; });
@@ -672,7 +849,7 @@
       await loadJokes;
       home();
     } catch {
-      render(`<div class="wrap"><div class="card panel"><h1>The questions didn't load</h1><p>Check your internet connection, then reload the page.</p><button class="piece primary" onclick="location.reload()">Reload</button></div></div>`);
+      render(`<div class="wrap"><div class="card panel"><h1>The questions didn't load</h1><p>Check your internet connection, then reload the page. After the first visit, Hunchy works offline too.</p><button class="piece primary" onclick="location.reload()">Reload</button></div></div>`);
     }
   }
   boot();

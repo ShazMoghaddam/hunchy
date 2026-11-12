@@ -47,6 +47,9 @@ or easy to get wrong were checked against a second source:
 | Koala fingerprints are almost identical to ours | [PBS NOVA](https://www.pbs.org/wgbh/nova/article/koala-fingerprints) | Confirmed |
 | Danone began in Barcelona in 1919 | [Danone](https://www.danone.com/group/about-us/our-history.html) | Confirmed |
 | Mini Babybel launched in 1977 | Supermarket listings and brand pages | Couldn't be confirmed, so the fact was rewritten without the year |
+| Nobody knows for sure where the word "quiz" comes from | [Merriam-Webster](https://www.merriam-webster.com/wordplay/word-history-of-quiz) | Confirmed: the Dublin bet story is first recorded in 1856 and nothing backs it up |
+| Shakespeare is the first recorded user of "eyeball" | [Mental Floss](https://mentalfloss.com/article/48657/20-words-) | Confirmed. The same article lists words often wrongly credited to him, so none of those were used |
+| The Hawaiian alphabet has 13 letters | [Wikipedia: Hawaiian alphabet](https://en.wikipedia.org/wiki/Hawaiian_alphabet) | Confirmed: five vowels, seven consonants and the ʻokina |
 | Key dates in British history | [English Heritage timeline](https://www.english-heritage.org.uk/members-area/kids/kids-timeline-of-history/) | Hastings, Magna Carta, Gunpowder Plot, Great Fire, Waterloo, Victoria, Lindisfarne, Hadrian's Wall, Black Death and the Roman invasion confirmed |
 
 ## What the checks changed
@@ -65,6 +68,8 @@ or easy to get wrong were checked against a second source:
   history that doesn't belong in a family quiz, so it now asks where the company was founded.
 - **Old Faithful** erupts roughly every 90 minutes, not every hour. Corrected.
 - **Religion** was taken out: a Diwali question became La Tomatina, and a camera-brand fact lost its religious detail.
+- **"Which language has the most native speakers?"** was already in the bank, so the Words & Language version was
+  swapped for a question about the word "piano".
 - **New questions** replaced weaker ones where checking turned up something better: the 2025 to 2026 Premier League,
   Eurovision 2026 and the UN's new list of the biggest cities.
 
