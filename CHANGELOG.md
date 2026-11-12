@@ -1,5 +1,30 @@
 # Changelog
 
+## v1.2.0 (2026-11-12)
+
+A much bigger question bank: **1,630 questions, up from 1,260**. No new subjects; the existing ones go deeper.
+
+- **Sport (+72):** the World Cup from 1998 to 2030, the Euros and the Copa América, the Olympics (how often they're
+  held, legends from Jesse Owens to Nadia Comăneci), Formula One (Hamilton's record 106 wins, Senna, Silverstone,
+  Monaco) and the big events: the Masters, the Ryder Cup, the Grand National, the Boat Race, the Six Nations,
+  darts, snooker and boxing.
+- **Music (+60):** bands, hit songs and singers, from the Beatles, Queen, ABBA and Motown to Oasis, BLACKPINK and
+  Bad Bunny, plus composers and instruments.
+- **Geography (+47):** the Nile, the Amazon, the Arctic and Antarctic, the Equator and the lines on the map, and the
+  shape of the world.
+- **Cities & Landmarks (+39):** the Great Wall of China, the Grand Canyon, Niagara Falls, the Statue of Liberty,
+  the Golden Gate's city, the Tower of London, and natural wonders from Iguazu to the Salar de Uyuni.
+- **Leaders & Famous People (+44):** inventors such as Edison, Bell, Tesla and Marconi; explorers such as Scott and
+  Shackleton; and leaders who made a mark, including Nelson Mandela, Gandhi and Churchill. History, never politics.
+- **Science (+51):** chemistry, physics, how the body works, and health facts checked against the NHS.
+- **History (+19), Maths (+15), Space (+11) and Nature & Animals (+12)**, including Artemis II's 2026 trip round the Moon.
+- Recent facts (Hamilton's wins, Super Bowl LX, Glasgow 2026, Artemis II, the Copa América record) were checked
+  against a second source and are listed in `questions/CHECKS.md`.
+- **100 more grown-up jokes**, making 200 in all. They're teasing, a little flirty or a little dark, never crude,
+  and they only appear when Grown-up jokes is switched on in Settings. The existing jokes keep their ids, so
+  nobody's "already seen" list is reset.
+- The README banner and social preview now say 1,600+.
+
 ## v1.1.2 (2026-11-12)
 
 - **A quiz for any get-together.** Hunchy's wording now fits every group: friends round, a party, the pub or a

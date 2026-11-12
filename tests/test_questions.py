@@ -29,8 +29,8 @@ def test_the_published_file_matches_the_source():
     assert QUESTIONS == all_generated() + curated()
 
 
-def test_there_are_1260_questions_with_no_problems():
-    assert len(QUESTIONS) == BANK["count"] == 1260
+def test_there_are_1630_questions_with_no_problems():
+    assert len(QUESTIONS) == BANK["count"] == 1630
     assert check(QUESTIONS) == []
 
 
@@ -84,7 +84,7 @@ def test_maths_answers_are_correct():
             assert right == ("Bigger" if bigger else "Smaller")
         elif m := re.fullmatch(r"Is (\d+) a prime number\?", p):
             n = int(m[1])
-            assert (right == "Yes") == all(n % d for d in range(2, n))
+            assert (right == "Yes") == (n > 1 and all(n % d for d in range(2, n)))
         elif m := re.fullmatch(r"Which number is ([MDCLXVI]+) in Roman numerals\?", p):
             assert to_roman(int(right)) == m[1]
         # wrong answers must really be wrong: no option can equal the right one
@@ -156,10 +156,16 @@ def test_the_jokes_file_matches_the_source():
     assert [(j["setup"], j["punchline"]) for j in JOKES] == expected
 
 
-def test_there_are_100_jokes_mostly_for_everyone():
-    assert len(JOKES) == 100
+def test_there_are_200_jokes_75_for_everyone():
+    assert len(JOKES) == 200
     assert sum(not j["grownUp"] for j in JOKES) == 75
-    assert len({j["id"] for j in JOKES}) == len({j["setup"] for j in JOKES}) == len({j["punchline"] for j in JOKES}) == 100
+    assert len({j["id"] for j in JOKES}) == len({j["setup"] for j in JOKES}) == len({j["punchline"] for j in JOKES}) == 200
+
+
+def test_existing_jokes_keep_their_ids():
+    """Players' 'already seen' lists are stored by id, so adding jokes must never renumber the old ones."""
+    assert JOKES[0]["setup"] == "Why did the higher-or-lower player bring a ladder?" and JOKES[0]["id"] == "joke-001"
+    assert JOKES[75]["id"] == "joke-076" and JOKES[75]["setup"] == "What was Henry VIII's best dating advice?"
 
 
 def test_jokes_are_clean_text():
@@ -250,7 +256,7 @@ def test_subject_colours_are_readable():
 
 
 def test_public_counts_use_the_rounded_figure():
-    """The README and page say '1,200+', rounded down to the hundred, so they stay true as questions are added.
+    """The README and page say '1,600+', rounded down to the hundred, so they stay true as questions are added.
     When the bank passes the next hundred, this test fails as a reminder to update them (and the banner)."""
     rounded = f"{len(QUESTIONS) // 100 * 100:,}+"
     for path in ["README.md", "index.html"]:
