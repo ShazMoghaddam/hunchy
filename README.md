@@ -52,23 +52,25 @@ the punchline, and any joke can be shared. They come out at random and don't rep
 Most of them are for everyone: puns, groan-worthy wordplay and gentle digs. Switch on **Grown-up jokes** in
 Settings to add 125 cheekier ones: teasing, a little flirty or a little dark, but never crude. They're off unless someone turns them on.
 
-## 1,600+ questions in 18 subjects
+## 2,200+ questions in 18 subjects
 
 | Subject | Questions | | Subject | Questions |
 |---|---:|---|---|---:|
-| Sport | 220 | | Maths | 75 |
-| Geography | 162 | | Nature & Animals | 72 |
-| Cities & Landmarks | 131 | | Film & TV | 65 |
-| Music | 125 | | Space | 63 |
-| Science | 111 | | Food & Drink | 60 |
-| Leaders & Famous People | 108 | | Words & Language | 60 |
-| History | 93 | | Cartoons & Animation | 47 |
-| Inventions & Brands | 82 | | Cars & Motorbikes | 45 |
-| Art & Culture | 79 | | Fashion | 32 |
+| Music | 270 | | History | 93 |
+| Sport | 220 | | Food & Drink | 91 |
+| Film & TV | 218 | | Nature & Animals | 85 |
+| Art & Culture | 187 | | Cartoons & Animation | 79 |
+| Geography | 162 | | Words & Language | 77 |
+| Cities & Landmarks | 131 | | Maths | 75 |
+| Science | 111 | | Cars & Motorbikes | 75 |
+| Leaders & Famous People | 108 | | Space | 70 |
+| Inventions & Brands | 100 | | Fashion | 55 |
 
 Sport covers football, the World Cup, the Euros and the Champions League, tennis, the Olympics, the Tour de France,
 Formula One and the big events from the Masters to the Boat Race. Music runs from Mozart and Motown to Queen, ABBA,
-Oasis and Bad Bunny. Geography asks capitals both ways round ("Canberra is the capital of which country?") and
+Oasis and Bad Bunny, with plenty of "who sang it?" and "which of these is a Madonna song?". Film & TV takes in
+the big stars and directors, from Casablanca and Top Gun to Barbie and Frankenstein, and Art & Culture visits the great
+museums, from the V&A and the Science Museum to the Louvre, MoMA and the Prado. Geography asks capitals both ways round ("Canberra is the capital of which country?") and
 follows the Nile, the Amazon, the Equator and both poles, and Cities & Landmarks takes in mountains, rivers and
 wonders from Everest and Damavand to the Great Wall, Niagara Falls and the Golden Gate Bridge. Science now includes
 chemistry and how the body works, with health facts checked against the NHS. Leaders appear as history, never
@@ -93,6 +95,11 @@ A quiz is only fun if the answers are right, so every question carries its sourc
 - **Anything that can change**, like a sports record or "the tallest building", says when it was last checked.
 - **Questions about who holds a job now**, like the current prime minister, are left out on purpose. They go out
   of date, sometimes within months.
+- **Films and songs** were checked a second time against open data: casts and years against
+  [a dataset built from Wikipedia](https://github.com/prust/wikipedia-movie-data), and every singer against the full
+  [Billboard Hot 100 history](https://github.com/mhollingshead/billboard-hot-100). The tempting wrong answers were
+  checked too, so a decoy actor is never secretly in the film. The newest films and songs were also checked
+  against news reports.
 - **Songs** are asked about by title, artist and year. The game never quotes lyrics.
 
 [questions/CHECKS.md](questions/CHECKS.md) lists the second round of checks and what they changed.

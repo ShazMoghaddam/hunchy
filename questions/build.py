@@ -23,7 +23,8 @@ from questions.generated import all_generated  # noqa: E402
 OUT = ROOT / "data" / "questions.json"
 CURATED = ["history", "people", "places", "science", "sport", "screen", "culture",
            "sport2", "vehicles", "brands", "art2", "fashion_food_cartoons", "world2", "words",
-           "sport3", "music3", "landmarks3", "world3", "people3", "science3", "history3"]
+           "sport3", "music3", "landmarks3", "world3", "people3", "science3", "history3",
+           "screen4", "music4", "art4", "extras4"]
 
 CATEGORIES = {
     "geography": "Geography", "landmarks": "Cities & Landmarks", "history": "History",

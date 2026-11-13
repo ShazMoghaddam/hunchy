@@ -1,5 +1,27 @@
 # Changelog
 
+## v1.3.0 (2026-11-13)
+
+A much bigger question bank: **2,207 questions, up from 1,630**. The 577 new ones lean into film, music, art and
+culture, with tempting wrong answers that make you stop and think: another famous Tom, the actor who played the same
+part in a different film, or a song with almost the same title.
+
+- **Film & TV (+153):** Top Gun, Gladiator, Casablanca, The Godfather, Barbie and Frankenstein; Clint Eastwood, Morgan
+  Freeman, Jacob Elordi and Mark Wahlberg; the great directors, film music, James Bond, British comedy, quiz shows and
+  streaming.
+- **Music (+145):** "Who sang it?" from Elvis and Motown to Sabrina Carpenter, and "Which of these is a Madonna song?"
+  style questions, plus the stories behind famous covers, Eurovision, classical music and musicals. Song titles only,
+  never lyrics.
+- **Art & Culture (+108):** the world's great museums, from the V&A, the Science Museum and the National Gallery to the
+  Louvre, MoMA, the Prado, the Rijksmuseum and the Grand Egyptian Museum; plus artists, architects, books and festivals.
+- **The other subjects (+171):** cartoons, fashion, cars and motorbikes, food, inventions, words, nature and space.
+- **Checked twice.** Every film cast and year was checked against a dataset built from Wikipedia, and every singer
+  against the full Billboard Hot 100 history, including the wrong answers, so a decoy actor is never secretly in the
+  film. The newest facts were checked against news reports. See `questions/CHECKS.md`.
+- **No giveaways.** Each new question was checked against the facts shown after every other question, and 30 were
+  replaced because another answer's fact would have given them away.
+- The README, page description, banner and social preview now say 2,200+.
+
 ## v1.2.1 (2026-11-13)
 
 **No more repeated questions.** With 1,630 questions in the bank, the same ones were coming up far too often. Three
