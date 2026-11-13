@@ -34,3 +34,5 @@ jobs:
           node-version: "22"
       - name: The game's JavaScript has no syntax errors
         run: node --check assets/app.js
+      - name: Questions are picked fairly and don't repeat
+        run: node --test tests/picker.test.js

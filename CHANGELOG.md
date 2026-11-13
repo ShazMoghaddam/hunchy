@@ -1,5 +1,25 @@
 # Changelog
 
+## v1.2.1 (2026-11-13)
+
+**No more repeated questions.** With 1,630 questions in the bank, the same ones were coming up far too often. Three
+things were causing it, and all three are fixed. Nothing to do on your phone: the update arrives by itself.
+
+- **Playing one subject wiped your memory of everything.** Hunchy remembers which questions you've answered, but as
+  soon as a single subject ran low (Fashion has 32 questions, so after three rounds), it forgot every question in
+  every subject and started again. Now only questions you've seen in that subject can come back, starting with the
+  ones you saw longest ago. In a test of 60 mixed rounds, repeats outside that subject went from 76 to none.
+- **Today's ten kept picking from tiny piles.** It asked for a set kind and difficulty in each subject, and some
+  subjects have only one or two questions of that kind, so the same question turned up again and again (one
+  appeared 11 times in 90 days). The whole bank is now dealt out once into a fixed run of daily tens, still the same
+  for everyone, so no daily question comes round again for about five months. Every day still has ten different
+  subjects, at least one yes/no or higher/lower, and something classic and something modern.
+- **Mixed rounds leaned on the biggest subjects.** Sport has 220 questions and Fashion 32, so a mixed round often
+  had two or three sport questions. A mixed round now moves through ten different subjects.
+- Yes/no and higher/lower questions are rarer than pick-one, so they no longer get repeated just to fill a slot. If
+  you've seen them all, a fresh pick-one takes their place.
+- New tests (`tests/picker.test.js`) check all of this on every pull request.
+
 ## v1.2.0 (2026-11-12)
 
 A much bigger question bank: **1,630 questions, up from 1,260**. No new subjects; the existing ones go deeper.

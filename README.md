@@ -31,6 +31,10 @@ After each answer you get a short "did you know" fact and a link to where the an
 | **Three lives** | Keep going until you get three wrong |
 | **Hunch-off** | 2 to 6 players take turns on one phone. Highest score wins, with a joke break after every round of turns |
 
+**No repeats.** Hunchy remembers every question you've answered in this browser and won't ask one again until
+you've seen every question in the subjects you're playing. A mixed round moves through different subjects rather
+than doubling up. Today's ten works through the whole bank too, so a question won't come round again for months.
+
 **Your stats** shows your best subjects, longest daily streak, best run at three lives and how many perfect tens
 you've scored.
 
