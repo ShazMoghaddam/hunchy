@@ -59,56 +59,90 @@
 
   // Choosing questions ------------------------------------------------------------------------
 
-  // Ten questions from ten different subjects, with two of each quick kind and something for every generation.
-  function dailyTen(key) {
-    const rnd = seeded("hunchy-" + key);
-    const cats = shuffle(Object.keys(bank.categories), rnd).slice(0, ROUND);
-    const kinds = shuffle(["higher-lower", "higher-lower", "yes-no", "yes-no", "choice", "choice", "choice", "choice", "choice", "choice"], rnd);
-    const levels = shuffle([1, 1, 1, 2, 2, 2, 2, 3, 3, 2], rnd);
-    const picked = cats.map((cat, i) => {
-      const inCat = bank.questions.filter((q) => q.category === cat);
-      const exact = inCat.filter((q) => q.type === kinds[i] && q.difficulty === levels[i]);
-      const sameKind = inCat.filter((q) => q.type === kinds[i]);
-      return pickOne(exact.length ? exact : sameKind.length ? sameKind : inCat, rnd);
-    });
-    // Make sure there's at least one classic and one modern question, so nobody at the table is left out.
-    for (const era of ["classic", "modern"]) {
-      if (picked.some((q) => q.era === era)) continue;
-      for (let i = 0; i < picked.length; i++) {
-        const swap = bank.questions.filter((q) => q.category === picked[i].category && q.era === era && q.type === picked[i].type);
-        if (swap.length) { picked[i] = pickOne(swap, rnd); break; }
-      }
+  // The daily ten. The whole bank is dealt out once, in a fixed order that's the same on every device, into a long
+  // run of daily tens: ten different subjects each day, and no question comes round again until the whole run has
+  // been played (about five months). Each subject is used up at the same pace, so small subjects never run dry early.
+  let dailyRun = null;
+  function buildDailyRun() {
+    const rnd = seeded("hunchy-daily");
+    const byId = (a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
+    const queues = {}, size = {};
+    for (const cat of Object.keys(bank.categories).sort()) {
+      queues[cat] = shuffle(bank.questions.filter((q) => q.category === cat).sort(byId), rnd);
+      size[cat] = queues[cat].length;
     }
-    return picked;
+    const used = (cat) => 1 - queues[cat].length / size[cat];
+    // Every day should have at least one quick kind (yes/no or higher/lower), one classic and one modern question.
+    const wants = [(q) => q.type !== "choice", (q) => q.era === "classic", (q) => q.era === "modern"];
+    const run = [];
+    for (;;) {
+      const open = Object.keys(queues).filter((cat) => queues[cat].length);
+      if (open.length < ROUND) break;
+      // The subjects furthest behind go next; the shuffle first breaks ties at random.
+      const cats = shuffle(open, rnd).sort((a, b) => used(a) - used(b)).slice(0, ROUND);
+      const ten = cats.map((cat) => queues[cat].shift());
+      wants.forEach((want, t) => {
+        if (ten.some(want)) return;
+        for (let i = 0; i < ten.length; i++) {
+          // Look a few questions ahead in the same subject, and swap only if it keeps the earlier wants met.
+          const queue = queues[cats[i]], k = queue.slice(0, 8).findIndex(want);
+          if (k < 0) continue;
+          const trial = ten.map((q, j) => (j === i ? queue[k] : q));
+          if (!wants.slice(0, t).every((earlier) => trial.some(earlier))) continue;
+          [ten[i], queue[k]] = [queue[k], ten[i]]; // the question swapped out goes back for a later day
+          break;
+        }
+      });
+      run.push(shuffle(ten, rnd));
+    }
+    return run;
+  }
+  function dailyTen(key) {
+    dailyRun = dailyRun || buildDailyRun();
+    const day = Math.round((Date.parse(key + "T12:00:00Z") - Date.parse("2026-01-01T12:00:00Z")) / 864e5);
+    return dailyRun[((day % dailyRun.length) + dailyRun.length) % dailyRun.length];
   }
 
-  // Questions this browser hasn't seen yet come first, so quick rounds don't repeat until the bank runs out.
+  // Questions for a quick round, Hunch-off or Three lives.
+  // Questions never answered on this browser always come first. Only once a pool has none left does a question come
+  // back, starting with the ones answered longest ago, so the one you saw five minutes ago is the last to return.
   function fresh(pool, count) {
-    const seen = new Set(store.get("seen", []));
-    let unseen = pool.filter((q) => !seen.has(q.id));
-    if (unseen.length < count) { store.set("seen", []); unseen = pool; }
-    return balanced(shuffle(unseen), count);
+    const when = new Map(store.get("seen", []).map((id, i) => [id, i]));
+    const unseen = shuffle(pool.filter((q) => !when.has(q.id)));
+    const again = pool.filter((q) => when.has(q.id)).sort((a, b) => when.get(a.id) - when.get(b.id));
+    // A light shuffle among the oldest, so returning questions don't come back in exactly the order they went.
+    const back = shuffle(again.slice(0, count * 2)).concat(again.slice(count * 2));
+    return balanced(unseen.concat(back), new Set(unseen.map((q) => q.id)), count);
   }
 
-  // Spread the kinds of question through a round instead of clumping them.
-  function balanced(list, count) {
-    const byType = { "choice": [], "yes-no": [], "higher-lower": [] };
-    list.forEach((q) => byType[q.type].push(q));
+  // Build the round from a list ordered best first. Unseen questions always beat seen ones; within that, each round
+  // moves through different subjects before any subject comes up twice, and the kinds of question are spread out.
+  function balanced(list, unseenIds, count) {
     const order = ["choice", "higher-lower", "choice", "yes-no"];
-    const out = [];
-    let i = 0;
-    while (out.length < count && (byType.choice.length || byType["yes-no"].length || byType["higher-lower"].length)) {
-      const want = order[i++ % order.length];
-      const from = byType[want].length ? byType[want] : byType.choice.length ? byType.choice : byType["yes-no"].length ? byType["yes-no"] : byType["higher-lower"];
-      out.push(from.shift());
+    const subjects = new Set(list.map((q) => q.category));
+    const left = list.slice(), usedCats = new Set(), out = [];
+    while (out.length < count && left.length) {
+      const want = order[out.length % order.length];
+      const best = unseenIds.has(left[0].id); // the list is unseen-first, so this is the freshest tier left
+      const tier = left.filter((q) => unseenIds.has(q.id) === best);
+      const newCat = tier.filter((q) => !usedCats.has(q.category));
+      const from = newCat.length ? newCat : tier;
+      // A wanted kind only if one is fresh; never repeat a question just to fill a yes/no or higher/lower slot.
+      const pick = from.find((q) => q.type === want) || from.find((q) => q.type === "choice") || from[0];
+      left.splice(left.indexOf(pick), 1);
+      out.push(pick);
+      usedCats.add(pick.category);
+      if (usedCats.size >= subjects.size) usedCats.clear();
     }
     return out;
   }
 
   function markSeen(id) {
-    const seen = store.get("seen", []);
-    // Every question is remembered (about 9 KB for the whole bank), so nothing repeats until the pile runs out.
-    if (!seen.includes(id)) { seen.push(id); store.set("seen", seen); }
+    // Every answered question is remembered, oldest first (about 9 KB for the whole bank). Answering one again moves
+    // it to the end, so the list always says which questions were seen longest ago.
+    const seen = store.get("seen", []).filter((x) => x !== id);
+    seen.push(id);
+    store.set("seen", seen);
   }
 
   // Stats: kept in this browser only, like everything else.
