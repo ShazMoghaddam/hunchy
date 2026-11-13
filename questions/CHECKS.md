@@ -93,4 +93,31 @@ or easy to get wrong were checked against a second source:
 - **Questions too close to existing ones** were dropped: the Shard against the Eiffel Tower (already asked the
   other way round), the Golden Gate Bridge's opening year and the Hollywood sign, whose answer another fact gives away.
 
+## The v1.3.0 expansion (577 questions)
+
+| Checked | Source | Result |
+|---|---|---|
+| Film casts and years, and that no wrong answer is in the film | [Wikipedia film data](https://github.com/prust/wikipedia-movie-data) | Every film in the dataset confirmed. The British and very recent films it doesn't cover (Love Actually, Gladiator II, Priscilla and others) are well documented and each links to its own page; the newest, like Frankenstein (2025), were also checked against reviews |
+| Every "who sang it?" answer | [Billboard Hot 100 history, 1958 to November 2026](https://github.com/mhollingshead/billboard-hot-100) | Confirmed for every song that charted in America. The few UK-only hits, such as Common People and Killing in the Name, aren't in it; each links to its own song page |
+| HUNTR/X's 'Golden' reached number one in Britain | [Official Charts](https://officialcharts.com/chart-news/kpop-demon-hunters-huntrx-golden-number-1-single/) | Confirmed, the first K-pop UK number one in 13 years |
+| Thieves stole crown jewels from the Louvre's Apollo Gallery in October 2025 | [Al Jazeera](https://www.aljazeera.com/news/2025/10/19/four-minute-heist-at-the-louvre-how-priceless-jewels-were-stolen-in-france) | Confirmed: a lift to a balcony window, about four minutes |
+| The Grand Egyptian Museum fully opened in November 2025 | [National Geographic](https://www.nationalgeographic.com/travel/article/what-to-know-about-opening-of-the-grand-egyptian-museum-cairo) | Confirmed, with Tutankhamun's treasures shown together for the first time |
+| Meryl Streep has 21 Oscar nominations | [Guinness World Records](https://www.guinnessworldrecords.com/news/2026/1/inside-meryl-streeps-iconic-record-breaking-career-as-most-nominated-oscars-actress-ever) | Confirmed, January 2026, with three wins. Carries an as-of date |
+| The Life of a Showgirl came out in October 2025 | [Variety](https://au.variety.com/2025/music/news/taylor-swift-the-life-of-a-showgirl-release-date-tracklist-26460) | Confirmed: 3 October |
+| Anna Wintour handed over American Vogue in 2025, after 37 years | [Al Jazeera](https://www.aljazeera.com/economy/2025/9/2/vogues-wintour-taps-successor-to-lead-editorial-at-the-iconic-magazine) | Confirmed |
+| Someone You Loved was the UK's biggest song of 2019; One Kiss the biggest-selling single of 2018 | [Official Charts](https://officialcharts.com/chart-news/the-official-top-40-biggest-songs-of-2019__28072) and [Music Week](https://www.musicweek.com/talent/read/dua-lipa-and-calvin-harris-top-2018-singles-sales/074885) | Confirmed |
+| Lewis Capaldi's comeback at Glastonbury 2025 | [RTÉ](https://www.rte.ie/entertainment/2025/0627/1520724-lewis-capaldi-does-surprise-glastonbury-set-im-back) | Confirmed |
+
+What the second check changed:
+
+- **Ducati's owner** was dropped: Volkswagen was reported in September 2026 to be weighing a sale, so the question
+  now asks about Ducati's engines instead.
+- **Thirty questions** were replaced because a fact elsewhere in the bank gave the answer away (for example, an
+  existing fact already says Gene Wilder played Willy Wonka in 1971).
+- **Six book questions** were already in the bank word for word, and were swapped for new ones.
+- **Ages**: Dana was 18, not 19, when she won Eurovision, and Dick Van Dyke was in his 90s for Mary Poppins Returns.
+- **SexyBack** was Justin Timberlake's lead single from his second album, not his first solo single. Corrected.
+- **Source links** for the newest or oddly named pages (such as '"Heroes" (David Bowie song)' and 'Espresso (song)')
+  were looked up and corrected.
+
 If you find anything else, please [report it](https://github.com/ShazMoghaddam/hunchy/issues/new?template=question-check.yml).

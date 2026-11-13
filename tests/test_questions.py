@@ -29,8 +29,8 @@ def test_the_published_file_matches_the_source():
     assert QUESTIONS == all_generated() + curated()
 
 
-def test_there_are_1630_questions_with_no_problems():
-    assert len(QUESTIONS) == BANK["count"] == 1630
+def test_there_are_2207_questions_with_no_problems():
+    assert len(QUESTIONS) == BANK["count"] == 2207
     assert check(QUESTIONS) == []
 
 
@@ -256,7 +256,7 @@ def test_subject_colours_are_readable():
 
 
 def test_public_counts_use_the_rounded_figure():
-    """The README and page say '1,600+', rounded down to the hundred, so they stay true as questions are added.
+    """The README and page say '2,200+', rounded down to the hundred, so they stay true as questions are added.
     When the bank passes the next hundred, this test fails as a reminder to update them (and the banner)."""
     rounded = f"{len(QUESTIONS) // 100 * 100:,}+"
     for path in ["README.md", "index.html"]:
